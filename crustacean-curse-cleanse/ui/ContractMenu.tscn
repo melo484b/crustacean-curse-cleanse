@@ -1,0 +1,146 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/ContractMenu.gd" type="Script" id=1]
+
+[node name="ContractMenu" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+margin_right = 207.0
+margin_bottom = 244.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 200.0
+margin_bottom = 237.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+margin_right = 193.0
+margin_bottom = 230.0
+
+[node name="Sign_Your_contract" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_right = 193.0
+margin_bottom = 28.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Sign_Your_contract"]
+margin_right = 193.0
+margin_bottom = 28.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Sign_Your_contract/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 186.0
+margin_bottom = 21.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Sign_Your_contract/PanelContainer/MarginContainer"]
+margin_right = 179.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Sign_Your_contract/PanelContainer/MarginContainer/CenterContainer"]
+margin_left = 30.0
+margin_right = 148.0
+margin_bottom = 14.0
+text = "Sign your contract!"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 32.0
+margin_right = 193.0
+margin_bottom = 46.0
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/CenterContainer"]
+margin_right = 193.0
+margin_bottom = 14.0
+text = "What will you trade for riches?"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 50.0
+margin_right = 193.0
+margin_bottom = 54.0
+
+[node name="Vision_Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 58.0
+margin_right = 193.0
+margin_bottom = 78.0
+toggle_mode = true
+text = "Vision"
+
+[node name="Connection_Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 82.0
+margin_right = 193.0
+margin_bottom = 102.0
+toggle_mode = true
+text = "Connection"
+
+[node name="Health_Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 106.0
+margin_right = 193.0
+margin_bottom = 126.0
+toggle_mode = true
+text = "Health"
+
+[node name="Luck_Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 130.0
+margin_right = 193.0
+margin_bottom = 150.0
+toggle_mode = true
+text = "Luck"
+
+[node name="Time_Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 154.0
+margin_right = 193.0
+margin_bottom = 174.0
+toggle_mode = true
+text = "Time"
+
+[node name="Wealth_Multiplier" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 178.0
+margin_right = 193.0
+margin_bottom = 206.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Wealth_Multiplier"]
+margin_right = 193.0
+margin_bottom = 28.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Wealth_Multiplier/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 186.0
+margin_bottom = 21.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Wealth_Multiplier/PanelContainer/MarginContainer"]
+margin_right = 179.0
+margin_bottom = 14.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Wealth_Multiplier/PanelContainer/MarginContainer/CenterContainer"]
+margin_left = 24.0
+margin_right = 155.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Wealth_Multiplier/PanelContainer/MarginContainer/CenterContainer/HBoxContainer"]
+margin_right = 119.0
+margin_bottom = 14.0
+text = "Wealth Multiplier: "
+
+[node name="Multiplier_Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Wealth_Multiplier/PanelContainer/MarginContainer/CenterContainer/HBoxContainer"]
+margin_left = 123.0
+margin_right = 131.0
+margin_bottom = 14.0
+text = "1"
+
+[node name="Sign_Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 210.0
+margin_right = 193.0
+margin_bottom = 230.0
+text = "SIGN"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Vision_Button" to="." method="_on_Vision_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Connection_Button" to="." method="_on_Connection_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Health_Button" to="." method="_on_Health_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Luck_Button" to="." method="_on_Luck_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Time_Button" to="." method="_on_Time_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Sign_Button" to="." method="_on_Sign_Button_pressed"]
