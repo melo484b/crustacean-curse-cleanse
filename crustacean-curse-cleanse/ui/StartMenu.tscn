@@ -1,0 +1,22 @@
+[gd_scene format=2]
+
+[node name="StartMenu" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+margin_right = 106.0
+margin_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 99.0
+margin_bottom = 33.0
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer"]
+margin_right = 92.0
+margin_bottom = 26.0
+text = "START GAME"
