@@ -13,10 +13,9 @@ export var friction: float = 0.1
 var _velocity: Vector2 = Vector2()
 var moving: bool = false
 
-export var health: int = 10
+export var health: float = 10
 
 onready var animation: AnimatedSprite = $AnimatedSprite
-onready var weapon_node: WeaponNode = $WeaponNode
 
 
 func _ready() -> void:
@@ -29,22 +28,11 @@ func _physics_process(_delta) -> void:
 
 
 func _on_ready() -> void:
-# warning-ignore:narrowing_conversion
-	health *= PlayerData.get_health_modifier()
-	friction *= PlayerData.get_connection()
+	pass
 
 
 func move() -> void:
-	var direction: Vector2 = get_input_direction()
-	if direction.length() > NORMALIZED_MOVEMENT:
-		direction = direction.normalized()
-	if direction != Vector2.ZERO:
-		moving = true
-	else:
-		moving = false
-	var target_velocity: Vector2 = direction * speed
-	_velocity += (target_velocity - _velocity) * friction
-	_velocity = move_and_slide(_velocity)
+	pass
 
 
 func get_input_direction() -> Vector2:
@@ -63,7 +51,6 @@ func animate_movement() -> void:
 
 func attack() -> void:
 	# TODO: Attack logic
-	# TODO: Attack sfx
 	pass
 
 func get_hurt() -> void:
