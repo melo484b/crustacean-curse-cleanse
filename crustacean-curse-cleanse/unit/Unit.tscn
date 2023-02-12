@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://art/crab-idle1.png" type="Texture" id=1]
 [ext_resource path="res://art/crab-walk2.png" type="Texture" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://art/crab-hurt.png" type="Texture" id=5]
 [ext_resource path="res://art/crab-idle2.png" type="Texture" id=6]
 [ext_resource path="res://unit/Unit.gd" type="Script" id=7]
-[ext_resource path="res://unit/WeaponNode.tscn" type="PackedScene" id=8]
+[ext_resource path="res://weapon/WeaponNode.tscn" type="PackedScene" id=8]
+[ext_resource path="res://weapon/Claw.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 12.5 )
@@ -50,7 +51,9 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="WeaponNode" parent="." instance=ExtResource( 8 )]
+
+[node name="Claw" parent="WeaponNode" instance=ExtResource( 9 )]

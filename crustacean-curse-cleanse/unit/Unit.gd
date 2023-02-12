@@ -35,10 +35,7 @@ func _on_ready() -> void:
 
 
 func move() -> void:
-	var direction: Vector2 = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"), 
-		Input.get_action_strength("down") - Input.get_action_strength("up")
-		)
+	var direction: Vector2 = get_input_direction()
 	if direction.length() > NORMALIZED_MOVEMENT:
 		direction = direction.normalized()
 	if direction != Vector2.ZERO:
@@ -48,6 +45,13 @@ func move() -> void:
 	var target_velocity: Vector2 = direction * speed
 	_velocity += (target_velocity - _velocity) * friction
 	_velocity = move_and_slide(_velocity)
+
+
+func get_input_direction() -> Vector2:
+	return Vector2(
+		Input.get_action_strength("right") - Input.get_action_strength("left"), 
+		Input.get_action_strength("down") - Input.get_action_strength("up")
+		)
 
 
 func animate_movement() -> void:
