@@ -14,13 +14,19 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://unit/Unit.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://weapon/Weapon.gd"
+}, {
+"base": "Node2D",
 "class": "WeaponNode",
 "language": "GDScript",
 "path": "res://weapon/WeaponNode.gd"
 } ]
 _global_script_class_icons={
 "Unit": "",
+"Weapon": "",
 "WeaponNode": ""
 }
 
@@ -74,6 +80,12 @@ attack={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="WORLD"
+2d_physics/layer_2="PLAYER"
+2d_physics/layer_3="ENEMY"
 
 [physics]
 
