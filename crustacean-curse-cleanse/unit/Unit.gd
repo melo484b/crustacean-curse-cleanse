@@ -15,8 +15,8 @@ var moving: bool = false
 
 export var health: int = 10
 
-
 onready var animation: AnimatedSprite = $AnimatedSprite
+onready var weapon_node: WeaponNode = $WeaponNode
 
 
 func _ready() -> void:
@@ -65,4 +65,5 @@ func attack() -> void:
 func get_hurt() -> void:
 	# TODO: Hurt logic
 	# TODO: Hurt sfx
+	emit_signal("take_damage")
 	animation.play("hurt")
