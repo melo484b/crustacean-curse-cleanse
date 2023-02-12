@@ -137,7 +137,6 @@ margin_top = 210.0
 margin_right = 193.0
 margin_bottom = 230.0
 text = "SIGN"
-
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Vision_Button" to="." method="_on_Vision_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Connection_Button" to="." method="_on_Connection_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Health_Button" to="." method="_on_Health_Button_pressed"]

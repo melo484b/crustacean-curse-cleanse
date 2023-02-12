@@ -189,7 +189,6 @@ margin_top = 132.0
 margin_right = 242.0
 margin_bottom = 152.0
 text = "START"
-
 [connection signal="gui_input" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Boon_1" to="." method="_on_Boon_1_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Boon_1" to="." method="_on_Boon_1_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Boon_1" to="." method="_on_Boon_1_mouse_exited"]
