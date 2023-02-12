@@ -1,7 +1,5 @@
 class_name WeaponNode
-extends Node
+extends Node2D
 
 
 enum Weapon { CLAW, LASER, CANNON }
-
-onready var parent_unit = get_parent()

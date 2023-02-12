@@ -6,7 +6,7 @@ onready var animation: AnimatedSprite = $ClawAttackAnimationSprite
 
 
 func _init() -> void:
-	damage = 35
+	damage = 3.5
 	knockback = 5
 
 
