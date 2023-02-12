@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+lifetime_randomness = 0.2
+emission_shape = 1
+emission_sphere_radius = 0.8
+flag_disable_z = true
+gravity = Vector3( 0, -1, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+hue_variation = -0.05
+hue_variation_random = 0.5
+
+[node name="LaserParticles" type="Particles2D"]
+modulate = Color( 0.67451, 0, 0, 0.768627 )
+process_material = SubResource( 1 )
