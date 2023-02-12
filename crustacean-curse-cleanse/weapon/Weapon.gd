@@ -1,7 +1,7 @@
 class_name Weapon
 extends Node2D
 
-var damage: int = 0
+var damage: float = 0.0
 var knockback: int = 0
 var previous_direction: Vector2 = Vector2()
 
