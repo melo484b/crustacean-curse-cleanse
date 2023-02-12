@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/projectile_explode_2.wav-4af9548121d658cfba247b150d97f77e.sample"
+
+[deps]
+
+source_file="res://sfx/projectile_explode_2.wav"
+dest_files=[ "res://.import/projectile_explode_2.wav-4af9548121d658cfba247b150d97f77e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

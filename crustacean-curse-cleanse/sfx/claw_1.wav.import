@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/claw_1.wav-14bcb88d0b8e4a937eabc6d820649208.sample"
+
+[deps]
+
+source_file="res://sfx/claw_1.wav"
+dest_files=[ "res://.import/claw_1.wav-14bcb88d0b8e4a937eabc6d820649208.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

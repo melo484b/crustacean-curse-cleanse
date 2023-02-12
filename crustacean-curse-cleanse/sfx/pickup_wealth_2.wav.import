@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pickup_wealth_2.wav-b4368a62efe77be7989dff61e766d73e.sample"
+
+[deps]
+
+source_file="res://sfx/pickup_wealth_2.wav"
+dest_files=[ "res://.import/pickup_wealth_2.wav-b4368a62efe77be7989dff61e766d73e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

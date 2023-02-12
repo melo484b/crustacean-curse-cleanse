@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/melee_hit_3.wav-4fabf458e1b7ce5291ef5855c427918d.sample"
+
+[deps]
+
+source_file="res://sfx/melee_hit_3.wav"
+dest_files=[ "res://.import/melee_hit_3.wav-4fabf458e1b7ce5291ef5855c427918d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
