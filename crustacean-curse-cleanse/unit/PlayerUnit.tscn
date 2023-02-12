@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://art/crab-idle1.png" type="Texture" id=1]
 [ext_resource path="res://art/crab-walk2.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://art/crab-idle2.png" type="Texture" id=6]
 [ext_resource path="res://unit/PlayerUnit.gd" type="Script" id=7]
 [ext_resource path="res://weapon/WeaponNode.tscn" type="PackedScene" id=8]
+[ext_resource path="res://weapon/Laser.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 12.5 )
@@ -37,6 +38,8 @@ animations = [ {
 [node name="PlayerUnit" type="KinematicBody2D" groups=[
 "PLAYER",
 ]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -44,6 +47,8 @@ position = Vector2( 0, 3.5 )
 shape = SubResource( 1 )
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 rotation = 1.5708
@@ -52,7 +57,8 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]
+
+[node name="Laser" parent="UnitWeaponNode" instance=ExtResource( 9 )]

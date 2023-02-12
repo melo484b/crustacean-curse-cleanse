@@ -35,6 +35,8 @@ animations = [ {
 } ]
 
 [node name="Unit" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -42,6 +44,8 @@ position = Vector2( 0, 3.5 )
 shape = SubResource( 1 )
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 rotation = 1.5708
@@ -50,6 +54,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]
