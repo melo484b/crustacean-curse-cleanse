@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "WeaponNode",
 "language": "GDScript",
-"path": "res://unit/WeaponNode.gd"
+"path": "res://weapon/WeaponNode.gd"
 } ]
 _global_script_class_icons={
 "Unit": "",
