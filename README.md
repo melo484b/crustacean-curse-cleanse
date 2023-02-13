@@ -3,13 +3,13 @@ Entry for Godot Wild Jam #54
 
 ## Acknowledgements:
 ### Music
- - Darkness Haunts by Tim Kulig
-Free download: https://filmmusic.io/song/8696-darkness-haunts
-License (CC BY 4.0): https://filmmusic.io/standard-license
-Changes made: Trimmed length
- - Disorder In The Soul by Michal Mojzykiewicz
-Free download: https://filmmusic.io/song/10062-disorder-in-the-soul
-License (CC BY 4.0): https://filmmusic.io/standard-license
+ - Darkness Haunts by Tim Kulig<br>
+Free download: https://filmmusic.io/song/8696-darkness-haunts<br>
+License (CC BY 4.0): https://filmmusic.io/standard-license<br>
+Changes made: Trimmed length<br>
+ - Disorder In The Soul by Michal Mojzykiewicz<br>
+Free download: https://filmmusic.io/song/10062-disorder-in-the-soul<br>
+License (CC BY 4.0): https://filmmusic.io/standard-license<br>
 Changes made: Trimmed length, gain reduced
 
 ## My tools:
