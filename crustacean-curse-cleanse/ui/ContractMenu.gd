@@ -66,7 +66,7 @@ func decrease_wealth_multiplier() -> void:
 	update_wealth_multiplier_label()
 
 
-func _on_Vision_Button_pressed():
+func _on_Vision_Button_pressed() -> void:
 	if vision_cursed:
 		vision_cursed = false
 		decrease_wealth_multiplier()
@@ -75,7 +75,7 @@ func _on_Vision_Button_pressed():
 		increase_wealth_multiplier()
 
 
-func _on_Connection_Button_pressed():
+func _on_Connection_Button_pressed() -> void:
 	if connection_cursed:
 		connection_cursed = false
 		decrease_wealth_multiplier()

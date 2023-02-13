@@ -8,7 +8,7 @@ var master_sound = AudioServer.get_bus_index("Master")
 onready var button: Button = $PanelContainer/MarginContainer/Button
 
 
-func _on_Button_toggled(button_pressed):
+func _on_Button_toggled(button_pressed) -> void:
 	if button_pressed:
 		button.icon = on
 		AudioServer.set_bus_mute(master_sound, false)
