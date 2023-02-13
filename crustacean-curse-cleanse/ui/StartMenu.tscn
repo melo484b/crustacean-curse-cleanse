@@ -2,21 +2,54 @@
 
 [node name="StartMenu" type="CanvasLayer"]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 margin_right = 106.0
-margin_bottom = 40.0
+margin_bottom = 34.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer"]
+margin_right = 106.0
+margin_bottom = 34.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 99.0
-margin_bottom = 33.0
+margin_bottom = 27.0
 
-[node name="Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/PanelContainer/MarginContainer"]
 margin_right = 92.0
-margin_bottom = 26.0
+margin_bottom = 20.0
 text = "START GAME"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 38.0
+margin_right = 106.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer3"]
+margin_right = 106.0
+margin_bottom = 34.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 99.0
+margin_bottom = 27.0
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer"]
+margin_right = 92.0
+margin_bottom = 20.0
+text = "QUIT"
