@@ -6,13 +6,12 @@
 [ext_resource path="res://art/crab-idle3.png" type="Texture" id=4]
 [ext_resource path="res://art/crab-hurt.png" type="Texture" id=5]
 [ext_resource path="res://art/crab-idle2.png" type="Texture" id=6]
-[ext_resource path="res://unit/PlayerUnit.gd" type="Script" id=7]
+[ext_resource path="res://unit/EnemyUnit.gd" type="Script" id=7]
 [ext_resource path="res://weapon/WeaponNode.tscn" type="PackedScene" id=8]
-[ext_resource path="res://weapon/Cannon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ui/HealthBar.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape2D" id=4]
-radius = 2.93288
-height = 20.8199
+radius = 4.5
 
 [sub_resource type="CapsuleShape2D" id=2]
 resource_local_to_scene = true
@@ -36,12 +35,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="PlayerUnit" type="KinematicBody2D" groups=[
-"PLAYER",
-]]
-collision_layer = 2
-collision_mask = 5
+[node name="EnemyUnit" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource( 7 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 9 )]
+margin_left = -51.5
+margin_top = -32.0
+margin_right = 976.5
+margin_bottom = 22.0
+rect_scale = Vector2( 0.1, 0.2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 3.5 )
@@ -49,8 +53,8 @@ rotation = 1.5708
 shape = SubResource( 4 )
 
 [node name="HurtBox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 4
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 rotation = 1.5708
@@ -59,9 +63,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]
-
-[node name="Cannon" parent="UnitWeaponNode" instance=ExtResource( 9 )]

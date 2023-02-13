@@ -10,6 +10,7 @@ const MOVEMENT_CONTROLS: Array = ["up", "down", "left", "right"]
 
 export var speed: float = 200.0
 export var friction: float = 0.1
+var knockback_vector: Vector2 = Vector2()
 var _velocity: Vector2 = Vector2()
 var moving: bool = false
 
@@ -25,6 +26,8 @@ func _ready() -> void:
 func _physics_process(_delta) -> void:
 	move()
 	animate_movement()
+	var _knockback = move_and_slide(knockback_vector)
+	knockback_vector = lerp(knockback_vector, Vector2.ZERO, 0.2)
 
 
 func _on_ready() -> void:
@@ -53,8 +56,17 @@ func attack() -> void:
 	# TODO: Attack logic
 	pass
 
-func get_hurt() -> void:
+
+func get_hurt(damage: float) -> void:
 	# TODO: Hurt logic
 	# TODO: Hurt sfx
-	emit_signal("take_damage")
+	emit_signal("take_damage", damage)
 	animation.play("hurt")
+
+
+func apply_knockback(knockback_location: Vector2, knockback_strength: int) -> void:
+	knockback_vector = (global_position - knockback_location) * knockback_strength
+
+
+func die() -> void:
+	pass
