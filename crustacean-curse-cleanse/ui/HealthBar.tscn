@@ -8,6 +8,7 @@
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 1028, 0 )
+mouse_filter = 1
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -19,16 +20,19 @@ __meta__ = {
 margin_left = 250.0
 margin_right = 778.0
 margin_bottom = 54.0
+mouse_filter = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 margin_right = 528.0
 margin_bottom = 54.0
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 521.0
 margin_bottom = 47.0
+mouse_filter = 1
 
 [node name="TextureProgress" type="TextureProgress" parent="MarginContainer/PanelContainer/MarginContainer"]
 margin_right = 514.0
