@@ -8,7 +8,7 @@
 [ext_resource path="res://art/crab-idle2.png" type="Texture" id=6]
 [ext_resource path="res://unit/PlayerUnit.gd" type="Script" id=7]
 [ext_resource path="res://weapon/WeaponNode.tscn" type="PackedScene" id=8]
-[ext_resource path="res://weapon/Laser.tscn" type="PackedScene" id=9]
+[ext_resource path="res://weapon/Cannon.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 12.5 )
@@ -57,8 +57,9 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]
 
-[node name="Laser" parent="UnitWeaponNode" instance=ExtResource( 9 )]
+[node name="Cannon" parent="UnitWeaponNode" instance=ExtResource( 9 )]
