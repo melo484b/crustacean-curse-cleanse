@@ -1,12 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://unit/Unit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://unit/EnemyUnit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://unit/PlayerUnit.tscn" type="PackedScene" id=2]
 
 [node name="map" type="Node2D"]
 
 [node name="PlayerUnit" parent="." instance=ExtResource( 2 )]
 
-[node name="Unit" parent="." instance=ExtResource( 1 )]
-modulate = Color( 0.545098, 0, 0, 1 )
-position = Vector2( 216.733, 32.4059 )
+[node name="EnemyUnit" parent="." instance=ExtResource( 1 )]
+position = Vector2( 152, 112 )
