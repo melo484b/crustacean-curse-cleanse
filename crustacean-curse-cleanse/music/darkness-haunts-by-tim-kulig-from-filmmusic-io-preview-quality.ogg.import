@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/darkness-haunts-by-tim-kulig-from-filmmusic-io-preview-quality.ogg-f88bd8d4532f8fd51c322159636e652f.oggstr"
+
+[deps]
+
+source_file="res://music/darkness-haunts-by-tim-kulig-from-filmmusic-io-preview-quality.ogg"
+dest_files=[ "res://.import/darkness-haunts-by-tim-kulig-from-filmmusic-io-preview-quality.ogg-f88bd8d4532f8fd51c322159636e652f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
