@@ -5,7 +5,7 @@ var cannonball: PackedScene = preload("res://weapon/Cannonball.tscn")
 var target: Vector2 = Vector2()
 var fired: bool = false
 
-func _init():
+func _init() -> void:
 	damage = 3.2
 	knockback = 10
 
