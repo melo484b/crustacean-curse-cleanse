@@ -1,7 +1,7 @@
 extends Unit
 
 
-func _init():
+func _init() -> void:
 # warning-ignore:narrowing_conversion
 	health *= PlayerData.get_health_modifier()
 	friction *= PlayerData.get_connection()

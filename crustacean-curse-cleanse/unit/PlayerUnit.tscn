@@ -8,7 +8,7 @@
 [ext_resource path="res://art/crab-idle2.png" type="Texture" id=6]
 [ext_resource path="res://unit/PlayerUnit.gd" type="Script" id=7]
 [ext_resource path="res://weapon/WeaponNode.tscn" type="PackedScene" id=8]
-[ext_resource path="res://weapon/Cannon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://weapon/Claw.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 2.93288
@@ -64,4 +64,4 @@ playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]
 
-[node name="Cannon" parent="UnitWeaponNode" instance=ExtResource( 9 )]
+[node name="Claw" parent="UnitWeaponNode" instance=ExtResource( 10 )]

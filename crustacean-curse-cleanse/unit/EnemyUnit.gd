@@ -6,7 +6,7 @@ const EVIL_MODULATION: String = "#820000"
 var health_bar: CenterContainer
 
 
-func _physics_process(_delta):
+func _physics_process(_delta) -> void:
 	move()
 
 
