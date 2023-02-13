@@ -26,3 +26,9 @@ func _on_ClawAttackAnimationSprite_animation_finished() -> void:
 
 func _on_Timer_timeout():
 	attack()
+
+
+func _on_Area2D_area_entered(area):
+	print("hit " + area.get_parent().name)
+	area.get_parent().get_hurt(damage)
+	area.get_parent().apply_knockback(position, knockback)
