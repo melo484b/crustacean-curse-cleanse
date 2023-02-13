@@ -10,6 +10,8 @@ var fired: bool = false
 var hit: bool = false
 var target_reached: bool = false
 var exploding: bool = false
+var damage: float = 0.0
+var knockback: int = 0
 
 onready var particles: Particles2D = $ExplosionParticles
 onready var collider: Area2D = $HitDetectionArea
@@ -24,6 +26,14 @@ func set_target(new_target: Vector2) -> void:
 	if not fired:
 		target = new_target
 		fired = true
+
+
+func set_damage(new_damage: float) -> void:
+	damage = new_damage
+
+
+func set_knockback(new_knockback: int) -> void:
+	knockback = new_knockback
 
 
 func move(delta: float) -> void:
@@ -60,3 +70,5 @@ func _on_HitDetectionArea_area_entered(area) -> void:
 		hit = true
 		target = position
 		explode()
+		area.get_parent().get_hurt(damage)
+		area.get_parent().apply_knockback(position, knockback)
