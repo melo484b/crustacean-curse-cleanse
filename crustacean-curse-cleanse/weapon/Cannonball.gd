@@ -47,12 +47,10 @@ func increase_detection_size() -> void:
 func explode() -> void:
 	exploding = true
 	particles.emitting = true
-	print("Starting timer")
 	timer.start()
 
 
 func _on_CleanupTimer_timeout() -> void:
-	print("Timer end")
 	visible = false
 	queue_free()
 
