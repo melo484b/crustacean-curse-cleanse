@@ -9,11 +9,6 @@ onready var particles: Particles2D = $LaserParticles
 onready var hit_area: Area2D = $HitArea
 
 
-func _unhandled_input(_event):
-	if Input.is_action_just_pressed("attack"):
-		fire()
-
-
 func _ready() -> void:
 	pass
 
@@ -48,5 +43,5 @@ func toggle_particles() -> void:
 		particles.visible = true
 
 
-func _on_HitArea_area_entered(area):
+func _on_HitArea_area_entered(_area) -> void:
 	hit_area.visible = false

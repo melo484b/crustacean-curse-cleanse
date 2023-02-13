@@ -42,5 +42,39 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Beam_1/HitArea"]
 shape = SubResource( 2 )
+
+[node name="Beam_2" type="Line2D" parent="."]
+points = PoolVector2Array( 9, -10 )
+width = 8.0
+default_color = Color( 0.411765, 0, 0.0666667, 1 )
+gradient = SubResource( 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Beam_2"]
+position = Vector2( 9, -10 )
+enabled = true
+collision_mask = 4
+
+[node name="LaserParticles" parent="Beam_2" instance=ExtResource( 4 )]
+visible = false
+scale = Vector2( 10, 10 )
+
+[node name="HitArea" type="Area2D" parent="Beam_2"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam_2/HitArea"]
+shape = SubResource( 2 )
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
 [connection signal="area_entered" from="Beam_1/HitArea" to="Beam_1" method="_on_HitArea_area_entered"]
 [connection signal="area_entered" from="Beam_1/HitArea" to="." method="_on_HitArea_area_entered"]
+[connection signal="area_entered" from="Beam_2/HitArea" to="." method="_on_HitArea_area_entered"]
+[connection signal="area_entered" from="Beam_2/HitArea" to="Beam_2" method="_on_HitArea_area_entered"]
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_AttackCooldown_timeout"]
