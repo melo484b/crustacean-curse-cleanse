@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 
+signal boon_confirmed
+
+
 var selected: int = 0
 
 onready var boon_buttons: HBoxContainer = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BoonButtons
@@ -30,4 +33,5 @@ func _on_Boon3_pressed() -> void:
 func _on_Confirm_Button_pressed() -> void:
 	# TODO: Start game
 	PlayerData.set_boon_selection(selected)
-	print(PlayerData.get_boon_selection())
+	emit_signal("boon_confirmed")
+	queue_free()

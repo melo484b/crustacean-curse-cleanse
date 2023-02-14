@@ -10,8 +10,10 @@
 script = ExtResource( 4 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 256.0
-margin_bottom = 142.0
+margin_left = 386.0
+margin_top = 229.0
+margin_right = 642.0
+margin_bottom = 371.0
 rect_min_size = Vector2( 256, 142 )
 mouse_filter = 1
 size_flags_horizontal = 5

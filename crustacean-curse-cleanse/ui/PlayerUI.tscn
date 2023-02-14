@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ui/HealthBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/PlayerUI.gd" type="Script" id=2]
 
 [node name="PlayerUI" type="CanvasLayer"]
+script = ExtResource( 2 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 1 )]
-mouse_filter = 1
+margin_top = 8.0
+margin_right = 1028.0
+margin_bottom = 56.0
+[connection signal="empty" from="HealthBar" to="." method="_on_HealthBar_empty"]

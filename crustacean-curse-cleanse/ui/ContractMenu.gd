@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 
+signal contract_signed
+
+
 const CURSED_VISION: float = 100.0
 const CURSED_CONNECTION: float = 0.1
 const CURSED_HEALTH_MODIFIER: float = 0.5
@@ -114,3 +117,5 @@ func _on_Time_Button_pressed():
 func _on_Sign_Button_pressed():
 	apply_curses()
 	PlayerData.set_wealth_multiplier(calculated_wealth_multiplier)
+	emit_signal("contract_signed")
+	queue_free()
