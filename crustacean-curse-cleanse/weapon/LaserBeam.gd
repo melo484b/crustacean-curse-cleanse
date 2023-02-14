@@ -20,10 +20,10 @@ func fire() -> void:
 		add_point(target)
 		particles.position = target
 		hit_area.position = target
-		hit_area.visible = true
+		hit_area.monitoring = true
 		toggle_particles()
 		yield(get_tree().create_timer(0.2), "timeout")
-		hit_area.visible = false
+		hit_area.monitoring = false
 		can_fire = true
 		toggle_particles()
 		remove_point(1)
@@ -44,4 +44,4 @@ func toggle_particles() -> void:
 
 
 func _on_HitArea_area_entered(_area) -> void:
-	hit_area.visible = false
+	hit_area.set_deferred("monitoring", false)
