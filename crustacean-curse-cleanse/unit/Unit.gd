@@ -2,7 +2,7 @@ class_name Unit
 extends KinematicBody2D
 
 
-signal take_damage
+signal take_damage(damage)
 
 
 const NORMALIZED_MOVEMENT: float = 1.0
@@ -58,7 +58,6 @@ func attack() -> void:
 
 
 func get_hurt(damage: float) -> void:
-	# TODO: Hurt logic
 	# TODO: Hurt sfx
 	emit_signal("take_damage", damage)
 	animation.play("hurt")

@@ -8,9 +8,9 @@
 [ext_resource path="res://art/crab-idle2.png" type="Texture" id=6]
 [ext_resource path="res://unit/PlayerUnit.gd" type="Script" id=7]
 [ext_resource path="res://weapon/WeaponNode.tscn" type="PackedScene" id=8]
-[ext_resource path="res://weapon/Claw.tscn" type="PackedScene" id=10]
+[ext_resource path="res://weapon/Laser.tscn" type="PackedScene" id=11]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 2.93288
 height = 20.8199
 
@@ -25,14 +25,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -46,7 +46,7 @@ script = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 3.5 )
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 2
@@ -64,4 +64,4 @@ playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]
 
-[node name="Claw" parent="UnitWeaponNode" instance=ExtResource( 10 )]
+[node name="Laser" parent="UnitWeaponNode" instance=ExtResource( 11 )]
