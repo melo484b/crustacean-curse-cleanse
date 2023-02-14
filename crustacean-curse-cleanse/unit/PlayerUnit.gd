@@ -9,7 +9,7 @@ func _init() -> void:
 
 
 func _on_ready() -> void:
-	pass
+	$UnitWeaponNode.equip_player_weapon()
 
 
 func move() -> void:
