@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Unit",
+"class": "EnemyUnit",
+"language": "GDScript",
+"path": "res://unit/EnemyUnit.gd"
+}, {
+"base": "Unit",
+"class": "PlayerUnit",
+"language": "GDScript",
+"path": "res://unit/PlayerUnit.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Unit",
 "language": "GDScript",
@@ -25,6 +35,8 @@ _global_script_classes=[ {
 "path": "res://weapon/WeaponNode.gd"
 } ]
 _global_script_class_icons={
+"EnemyUnit": "",
+"PlayerUnit": "",
 "Unit": "",
 "Weapon": "",
 "WeaponNode": ""
