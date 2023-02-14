@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ui/MuteButton.gd" type="Script" id=1]
 [ext_resource path="res://art/audio_off.png" type="Texture" id=2]
+[ext_resource path="res://resources/ui_theme.tres" type="Theme" id=3]
 
 [node name="MuteButton" type="MarginContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
+theme = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -16,14 +18,14 @@ margin_right = 58.0
 margin_bottom = 52.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 51.0
-margin_bottom = 45.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 54.0
+margin_bottom = 48.0
 
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer"]
-margin_right = 44.0
-margin_bottom = 38.0
+margin_right = 50.0
+margin_bottom = 44.0
 toggle_mode = true
 icon = ExtResource( 2 )
 [connection signal="toggled" from="PanelContainer/MarginContainer/Button" to="." method="_on_Button_toggled"]
