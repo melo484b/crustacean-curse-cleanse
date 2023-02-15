@@ -45,6 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="crustacean-curse-cleanse"
+run/main_scene="res://level/Level.tscn"
 config/icon="res://resources/icon.png"
 
 [audio]
