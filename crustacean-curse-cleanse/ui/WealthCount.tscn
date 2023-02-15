@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/WealthCount.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "add_wealth"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AddWealth:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 24 ), Vector2( 0, -32 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AddWealth:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="WealthCount" type="Label"]
+anchor_left = 0.918
+anchor_top = 0.028
+anchor_right = 0.918
+anchor_bottom = 0.028
+margin_left = -76.0321
+margin_top = -8.8
+margin_right = 75.9679
+margin_bottom = 9.2
+rect_min_size = Vector2( 152, 18 )
+theme = ExtResource( 1 )
+text = "Wealth: 0"
+align = 1
+valign = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddWealth" type="Label" parent="."]
+show_behind_parent = true
+anchor_left = 0.474
+anchor_top = 2.333
+anchor_right = 0.474
+anchor_bottom = 2.333
+margin_left = -72.0479
+margin_top = -17.994
+margin_right = 3.95206
+margin_bottom = 0.00603485
+rect_scale = Vector2( 2, 2 )
+text = "+ "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/add_wealth = SubResource( 1 )
