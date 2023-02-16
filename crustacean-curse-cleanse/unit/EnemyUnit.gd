@@ -17,6 +17,7 @@ func _on_ready() -> void:
 
 
 func move() -> void:
+	# TODO
 	pass
 
 
@@ -32,6 +33,9 @@ func attack() -> void:
 
 func get_hurt(damage: float) -> void:
 	# TODO: Hurt sfx
+	current_state = STATE.HURTING
 	health_bar.take_damage(damage)
-	emit_signal("take_damage")
-	animation.play("hurt")
+
+
+func _on_HealthBar_empty() -> void:
+	die()

@@ -5,14 +5,17 @@ extends KinematicBody2D
 signal take_damage(damage)
 
 
+enum STATE { MOVING, IDLE, HURTING }
+
 const NORMALIZED_MOVEMENT: float = 1.0
 const MOVEMENT_CONTROLS: Array = ["up", "down", "left", "right"]
 
 export var speed: float = 200.0
 export var friction: float = 0.1
 var knockback_vector: Vector2 = Vector2()
-var _velocity: Vector2 = Vector2()
+var velocity: Vector2 = Vector2()
 var moving: bool = false
+var current_state: int = STATE.IDLE
 
 export var health: float = 10
 
@@ -46,21 +49,23 @@ func get_input_direction() -> Vector2:
 
 
 func animate_movement() -> void:
-	if moving:
-		animation.play("walk")
-	else:
-		animation.play("idle")
+	match current_state:
+		STATE.MOVING:
+			animation.play("walk")
+		STATE.IDLE:
+			animation.play("idle")
+		STATE.HURTING:
+			animation.play("hurt")
 
 
 func attack() -> void:
-	# TODO: Attack logic
 	pass
 
 
 func get_hurt(damage: float) -> void:
+	current_state = STATE.HURTING
 	# TODO: Hurt sfx
 	emit_signal("take_damage", damage)
-	animation.play("hurt")
 
 
 func apply_knockback(knockback_location: Vector2, knockback_strength: int) -> void:
@@ -68,4 +73,4 @@ func apply_knockback(knockback_location: Vector2, knockback_strength: int) -> vo
 
 
 func die() -> void:
-	pass
+	queue_free()

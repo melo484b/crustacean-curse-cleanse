@@ -9,7 +9,7 @@
 [ext_resource path="res://unit/Unit.gd" type="Script" id=7]
 [ext_resource path="res://weapon/WeaponNode.tscn" type="PackedScene" id=8]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 5.50776
 height = 9.32954
 
@@ -24,14 +24,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "hurt",
 "speed": 5.0
 } ]
 
@@ -43,7 +43,7 @@ script = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1.5 )
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="HurtBox" type="Area2D" parent="."]
 visible = false
@@ -57,7 +57,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]

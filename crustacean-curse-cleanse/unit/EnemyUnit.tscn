@@ -10,7 +10,7 @@
 [ext_resource path="res://weapon/WeaponNode.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/HealthBar.tscn" type="PackedScene" id=9]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 4.5
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -24,14 +24,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "hurt",
 "speed": 5.0
 } ]
 
@@ -50,7 +50,7 @@ rect_scale = Vector2( 0.1, 0.2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 3.5 )
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 4
@@ -63,7 +63,8 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]
+[connection signal="empty" from="HealthBar" to="." method="_on_HealthBar_empty"]
