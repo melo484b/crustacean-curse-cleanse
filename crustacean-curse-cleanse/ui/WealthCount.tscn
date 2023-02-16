@@ -51,16 +51,15 @@ __meta__ = {
 
 [node name="AddWealth" type="Label" parent="."]
 show_behind_parent = true
-anchor_left = 0.474
+anchor_left = 0.5
 anchor_top = 2.333
-anchor_right = 0.474
+anchor_right = 0.5
 anchor_bottom = 2.333
-margin_left = -72.0479
+margin_left = -75.9999
 margin_top = -17.994
-margin_right = 3.95206
-margin_bottom = 0.00603485
+margin_right = 6.10352e-05
+margin_bottom = 0.00603104
 rect_scale = Vector2( 2, 2 )
-text = "+ "
 align = 1
 valign = 1
 __meta__ = {
