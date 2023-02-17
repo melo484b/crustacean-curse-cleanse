@@ -6,6 +6,7 @@ var health_modifier: float = 1.0
 var luck: float = 1.0
 var time_modifier: float = 1.0
 var boon_selection: int = 0
+var soul_cost: int = 0
 var score: int = 0
 var wealth_multiplier: float = 1.0
 
@@ -56,6 +57,14 @@ func set_boon_selection(boon_value: int) -> void:
 
 func get_boon_selection() -> int:
 	return boon_selection
+
+
+func get_soul_cost() -> int:
+	return soul_cost
+
+
+func set_soul_cost(new_cost: int) -> void:
+	soul_cost = new_cost
 
 
 func set_score(score_value: int) -> void:
