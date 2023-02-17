@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/soul_severed.wav-d6d2df575266103da6426d2d130744d1.sample"
+
+[deps]
+
+source_file="res://sfx/soul_severed.wav"
+dest_files=[ "res://.import/soul_severed.wav-d6d2df575266103da6426d2d130744d1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
