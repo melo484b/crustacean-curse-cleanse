@@ -2,6 +2,9 @@ class_name EnemyUnit
 extends Unit
 
 
+signal enemy_died(enemy_position)
+
+
 const EVIL_MODULATION: String = "#820000"
 
 var health_bar: CenterContainer
@@ -35,6 +38,11 @@ func get_hurt(damage: float) -> void:
 	# TODO: Hurt sfx
 	current_state = STATE.HURTING
 	health_bar.take_damage(damage)
+
+
+func die() -> void:
+	emit_signal("enemy_died", position)
+	queue_free()
 
 
 func _on_HealthBar_empty() -> void:
