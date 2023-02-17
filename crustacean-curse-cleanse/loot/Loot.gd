@@ -16,11 +16,6 @@ onready var animated_sprite: AnimatedSprite = $AnimatedSprite
 
 func _ready() -> void:
 	generate_loot()
-	
-
-func _on_PickupDetection_area_entered(area) -> void:
-	if area.is_in_group("PLAYER"):
-		emit_signal("picked_up", loot_value)
 
 
 func generate_loot() -> void:
@@ -33,3 +28,11 @@ func generate_loot() -> void:
 		1:
 			animated_sprite.animation = "chalice_sparkle"
 			loot_value = CHALICE_VALUE
+
+
+func _on_PickupDetection_body_entered(body) -> void:
+	print("pickup area entered - BODY")
+	if body.is_in_group("PLAYER"):
+		emit_signal("picked_up", loot_value)
+		# TODO: Replace with sick animation
+		queue_free()
