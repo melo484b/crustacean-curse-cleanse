@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/SoulCost.gd" type="Script" id=3]
+
+[node name="SoulCost" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.498
+anchor_top = 0.327
+anchor_right = 0.498
+anchor_bottom = 0.327
+margin_left = -237.952
+margin_top = -60.2
+margin_right = 238.048
+margin_bottom = 59.8
+rect_min_size = Vector2( 476, 120 )
+rect_pivot_offset = Vector2( 238, 60 )
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+margin_right = 476.0
+margin_bottom = 120.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 472.0
+margin_bottom = 116.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+margin_right = 468.0
+margin_bottom = 112.0
+custom_constants/separation = 8
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_right = 468.0
+margin_bottom = 60.0
+text = "Tragically, your life has come to an end.
+
+You may buy your soul back for the following sum:"
+align = 1
+
+[node name="CostLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 468.0
+margin_bottom = 86.0
+text = "0"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 94.0
+margin_right = 468.0
+margin_bottom = 112.0
+text = "You may choose one boon to aid you."
+align = 1
+valign = 1

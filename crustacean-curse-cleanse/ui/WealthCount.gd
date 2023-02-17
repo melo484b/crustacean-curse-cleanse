@@ -11,7 +11,7 @@ onready var increase_animation: AnimationPlayer = $AnimationPlayer
 
 
 func _ready():
-	animated_increase(10000)
+	animated_increase(10)
 
 
 func increase_wealth(wealth_to_add: int) -> void:

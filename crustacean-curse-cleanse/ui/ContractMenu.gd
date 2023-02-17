@@ -87,7 +87,7 @@ func _on_Connection_Button_pressed() -> void:
 		increase_wealth_multiplier()
 
 
-func _on_Health_Button_pressed():
+func _on_Health_Button_pressed() -> void:
 	if health_cursed:
 		health_cursed = false
 		decrease_wealth_multiplier()
@@ -96,7 +96,7 @@ func _on_Health_Button_pressed():
 		increase_wealth_multiplier()
 
 
-func _on_Luck_Button_pressed():
+func _on_Luck_Button_pressed() -> void:
 	if luck_cursed:
 		luck_cursed = false
 		decrease_wealth_multiplier()
@@ -105,7 +105,7 @@ func _on_Luck_Button_pressed():
 		increase_wealth_multiplier()
 
 
-func _on_Time_Button_pressed():
+func _on_Time_Button_pressed() -> void:
 	if time_cursed:
 		time_cursed = false
 		decrease_wealth_multiplier()
@@ -114,7 +114,7 @@ func _on_Time_Button_pressed():
 		increase_wealth_multiplier()
 
 
-func _on_Sign_Button_pressed():
+func _on_Sign_Button_pressed() -> void:
 	apply_curses()
 	PlayerData.set_wealth_multiplier(calculated_wealth_multiplier)
 	emit_signal("contract_signed")
