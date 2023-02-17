@@ -8,7 +8,7 @@ onready var start_menu: PackedScene = preload("res://ui/StartMenu.tscn")
 onready var boon_select: PackedScene = preload("res://ui/BoonSelect.tscn")
 onready var contract_menu: PackedScene = preload("res://ui/ContractMenu.tscn")
 
-onready var ysort: YSort = $YSort
+onready var spawn_layer: YSort = $SpawnLayer
 onready var player_ui: CanvasLayer = $PlayerUI
 
 
@@ -41,4 +41,4 @@ func spawn_player() -> void:
 	var player = player_unit.instance()
 	player.position = Vector2(512, 300)
 	player.connect("take_damage", player_ui, "reduce_health_bar")
-	ysort.add_child(player)
+	spawn_layer.add_child(player)
