@@ -42,5 +42,8 @@ func apply_loot_modifier() -> void:
 func _on_PickupDetection_body_entered(body) -> void:
 	if body.is_in_group("PLAYER"):
 		emit_signal("picked_up", loot_value)
+		$LootPickupSFXmanager.play()
 		# TODO: Replace with sick animation
-		queue_free()
+		visible = false
+		yield($LootPickupSFXmanager, "play_complete")
+		call_deferred("queue_free")
