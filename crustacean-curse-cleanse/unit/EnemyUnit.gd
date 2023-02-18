@@ -11,6 +11,7 @@ var health_bar: CenterContainer
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 onready var loot: PackedScene = preload("res://loot/Loot.tscn")
+onready var weapon_node: Node2D = $UnitWeaponNode
 onready var target: Vector2 = position
 
 
@@ -21,6 +22,8 @@ func _init():
 func _on_ready() -> void:
 	health_bar = $HealthBar
 	animation.modulate = EVIL_MODULATION
+	yield(get_tree().root, "ready")
+	weapon_node.equip_enemy_weapon()
 
 
 func move() -> void:
@@ -79,4 +82,3 @@ func _on_PlayerDetection_body_entered(body) -> void:
 func _on_PlayerDetection_body_exited(body) -> void:
 	set_target(body.position)
 	health_bar.visible = false
-	

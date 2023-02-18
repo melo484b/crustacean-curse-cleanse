@@ -15,3 +15,10 @@ func equip_player_weapon() -> void:
 			add_child(laser.instance())
 		2:
 			add_child(cannon.instance())
+
+
+func equip_enemy_weapon() -> void:
+	var claw_weapon: Weapon = claw.instance()
+	add_child(claw_weapon)
+	claw_weapon.init_enemy_weapon()
+	

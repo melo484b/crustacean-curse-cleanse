@@ -73,4 +73,4 @@ func apply_knockback(knockback_location: Vector2, knockback_strength: int) -> vo
 
 
 func die() -> void:
-	queue_free()
+	call_deferred("queue_free")
