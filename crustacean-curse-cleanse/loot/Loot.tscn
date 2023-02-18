@@ -34,7 +34,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "loot_sack_sparkle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="PickupDetection" type="Area2D" parent="."]

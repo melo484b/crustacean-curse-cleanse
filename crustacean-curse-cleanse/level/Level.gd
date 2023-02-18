@@ -38,11 +38,16 @@ func show_contract() -> void:
 	contract_menu_instance.connect("contract_signed", self, "spawn_player")
 
 
+func start_timer() -> void:
+	player_ui.start_ui_timer()
+
+
 func spawn_player() -> void:
 	var player = player_unit.instance()
 	player.position = Vector2(512, 300)
 	player.connect("take_damage", player_ui, "reduce_health_bar")
 	spawn_layer.add_child(player)
+	start_timer()
 
 
 func show_game_over() -> void:

@@ -12,9 +12,12 @@ var animation_index: int
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 onready var animated_sprite: AnimatedSprite = $AnimatedSprite
+onready var player_ui: CanvasLayer = get_parent().get_parent().find_node("PlayerUI")
 
 
 func _ready() -> void:
+# warning-ignore:return_value_discarded
+	self.connect("picked_up", player_ui, "pick_up_loot")
 	generate_loot()
 
 
