@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/HealthBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/PlayerUI.gd" type="Script" id=2]
 [ext_resource path="res://ui/WealthCount.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/GameTimer.tscn" type="PackedScene" id=4]
 
 [node name="PlayerUI" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -14,4 +15,11 @@ margin_bottom = 56.0
 rect_scale = Vector2( 1, 0.5 )
 
 [node name="WealthCount" parent="." instance=ExtResource( 3 )]
+
+[node name="GameTimer" parent="." instance=ExtResource( 4 )]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 56.0
+margin_bottom = 26.0
 [connection signal="empty" from="HealthBar" to="." method="_on_HealthBar_empty"]
+[connection signal="time_exhausted" from="GameTimer" to="." method="_on_GameTimer_time_exhausted"]
