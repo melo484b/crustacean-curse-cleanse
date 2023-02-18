@@ -13,5 +13,4 @@ func _init():
 
 func _ready() -> void:
 	cost_label.text = str(soul_cost)
-	print(str(soul_cost))
 	PlayerData.set_soul_cost(soul_cost)

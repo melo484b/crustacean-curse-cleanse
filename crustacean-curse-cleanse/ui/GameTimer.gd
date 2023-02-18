@@ -7,6 +7,10 @@ signal time_exhausted
 var game_time: int = 60
 
 
+func start() -> void:
+	$Timer.start()
+
+
 func update_text() -> void:
 	text = str(game_time)
 
