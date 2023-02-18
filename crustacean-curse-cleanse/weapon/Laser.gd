@@ -23,6 +23,7 @@ func _init() -> void:
 
 func attack() -> void:
 	if can_attack:
+		$LaserSFXmanager.play()
 		can_attack = false
 		match current_beam:
 			1:
@@ -36,6 +37,7 @@ func attack() -> void:
 
 func _on_HitArea_area_entered(area) -> void:
 	if not area.is_in_group("PLAYER"):
+		$LaserHitSFXmanager.play()
 		area.get_parent().get_hurt(damage)
 
 

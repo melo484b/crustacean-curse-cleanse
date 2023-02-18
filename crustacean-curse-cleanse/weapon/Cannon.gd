@@ -18,6 +18,7 @@ func _unhandled_input(_event) -> void:
 func attack() -> void:
 	if not fired:
 		fired = true
+		$CannonSFXmanager.play()
 		var ball_instance = cannonball.instance()
 		get_tree().get_root().add_child(ball_instance)
 		ball_instance.position = get_parent().get_parent().position
