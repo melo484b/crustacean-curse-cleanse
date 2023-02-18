@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://loot/Loot.gd" type="Script" id=1]
 [ext_resource path="res://art/chalice5.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://art/loot_sack2.png" type="Texture" id=9]
 [ext_resource path="res://art/loot_sack1.png" type="Texture" id=10]
 [ext_resource path="res://art/loot_sack5.png" type="Texture" id=11]
+[ext_resource path="res://light/PlayerUnitVision.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -43,4 +44,9 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupDetection"]
 shape = SubResource( 2 )
+
+[node name="PlayerVision" parent="." instance=ExtResource( 12 )]
+position = Vector2( -9.53674e-07, -9.53674e-07 )
+scale = Vector2( 0.75, 0.75 )
+color = Color( 0.984314, 1, 0.564706, 1 )
 [connection signal="body_entered" from="PickupDetection" to="." method="_on_PickupDetection_body_entered"]
