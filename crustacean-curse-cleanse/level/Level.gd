@@ -1,5 +1,8 @@
 extends Node2D
 
+
+var current_player: PlayerUnit
+
 # Units
 onready var player_unit: PackedScene = preload("res://unit/PlayerUnit.tscn")
 onready var enemy_unit: PackedScene = preload("res://unit/EnemyUnit.tscn")
@@ -47,6 +50,7 @@ func spawn_player() -> void:
 	player.position = Vector2(512, 300)
 	player.connect("take_damage", player_ui, "reduce_health_bar")
 	spawn_layer.add_child(player)
+	current_player = player
 	start_timer()
 
 
@@ -57,7 +61,9 @@ func show_game_over() -> void:
 
 func _on_PlayerUI_game_time_up() -> void:
 	show_game_over()
+	current_player.die()
 
 
 func _on_PlayerUI_player_death() -> void:
 	show_game_over()
+	current_player.die()
