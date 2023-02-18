@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://ui/StartMenu.gd" type="Script" id=2]
 [ext_resource path="res://ui/MuteButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://manager/PressSFXmanager.tscn" type="PackedScene" id=4]
+[ext_resource path="res://manager/HoverSFXmanager.tscn" type="PackedScene" id=5]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -54,5 +56,11 @@ margin_left = 968.0
 margin_top = 544.0
 margin_right = 1009.0
 margin_bottom = 585.0
+
+[node name="HoverSFX" parent="." instance=ExtResource( 5 )]
+
+[node name="PressSFX" parent="." instance=ExtResource( 4 )]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_Quit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

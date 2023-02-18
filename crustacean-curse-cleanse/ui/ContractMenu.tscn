@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/ContractMenu.gd" type="Script" id=1]
 [ext_resource path="res://resources/ui_theme.tres" type="Theme" id=2]
+[ext_resource path="res://manager/PressSFXmanager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://manager/HoverSFXmanager.tscn" type="PackedScene" id=4]
 
 [node name="ContractMenu" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -155,9 +157,19 @@ margin_top = 205.0
 margin_right = 294.0
 margin_bottom = 224.0
 text = "SIGN"
+
+[node name="HoverSFX" parent="." instance=ExtResource( 4 )]
+
+[node name="PressSFX" parent="." instance=ExtResource( 3 )]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Vision_Button" to="." method="_on_Vision_Button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Vision_Button" to="." method="_on_Vision_Button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Connection_Button" to="." method="_on_Connection_Button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Connection_Button" to="." method="_on_Connection_Button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Health_Button" to="." method="_on_Health_Button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Health_Button" to="." method="_on_Health_Button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Luck_Button" to="." method="_on_Luck_Button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Luck_Button" to="." method="_on_Luck_Button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Time_Button" to="." method="_on_Time_Button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Time_Button" to="." method="_on_Time_Button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Sign_Button" to="." method="_on_Sign_Button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Sign_Button" to="." method="_on_Sign_Button_pressed"]

@@ -70,6 +70,8 @@ func decrease_wealth_multiplier() -> void:
 
 
 func _on_Vision_Button_pressed() -> void:
+	$PressSFX.play()
+	yield($PressSFX, "play_complete")
 	if vision_cursed:
 		vision_cursed = false
 		decrease_wealth_multiplier()
@@ -79,6 +81,8 @@ func _on_Vision_Button_pressed() -> void:
 
 
 func _on_Connection_Button_pressed() -> void:
+	$PressSFX.play()
+	yield($PressSFX, "play_complete")
 	if connection_cursed:
 		connection_cursed = false
 		decrease_wealth_multiplier()
@@ -88,6 +92,8 @@ func _on_Connection_Button_pressed() -> void:
 
 
 func _on_Health_Button_pressed() -> void:
+	$PressSFX.play()
+	yield($PressSFX, "play_complete")
 	if health_cursed:
 		health_cursed = false
 		decrease_wealth_multiplier()
@@ -97,6 +103,8 @@ func _on_Health_Button_pressed() -> void:
 
 
 func _on_Luck_Button_pressed() -> void:
+	$PressSFX.play()
+	yield($PressSFX, "play_complete")
 	if luck_cursed:
 		luck_cursed = false
 		decrease_wealth_multiplier()
@@ -106,6 +114,8 @@ func _on_Luck_Button_pressed() -> void:
 
 
 func _on_Time_Button_pressed() -> void:
+	$PressSFX.play()
+	yield($PressSFX, "play_complete")
 	if time_cursed:
 		time_cursed = false
 		decrease_wealth_multiplier()
@@ -115,7 +125,33 @@ func _on_Time_Button_pressed() -> void:
 
 
 func _on_Sign_Button_pressed() -> void:
+	$PressSFX.play()
+	yield($PressSFX, "play_complete")
 	apply_curses()
 	PlayerData.set_wealth_multiplier(calculated_wealth_multiplier)
 	emit_signal("contract_signed")
-	queue_free()
+	call_deferred("queue_free")
+
+
+func _on_Sign_Button_mouse_entered() -> void:
+	$HoverSFX.play()
+
+
+func _on_Vision_Button_mouse_entered() -> void:
+	$HoverSFX.play()
+
+
+func _on_Connection_Button_mouse_entered() -> void:
+	$HoverSFX.play()
+
+
+func _on_Health_Button_mouse_entered() -> void:
+	$HoverSFX.play()
+
+
+func _on_Luck_Button_mouse_entered() -> void:
+	$HoverSFX.play()
+
+
+func _on_Time_Button_mouse_entered() -> void:
+	$HoverSFX.play()
