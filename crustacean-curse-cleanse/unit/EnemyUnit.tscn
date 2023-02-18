@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://art/crab-idle1.png" type="Texture" id=1]
 [ext_resource path="res://art/crab-walk2.png" type="Texture" id=2]
@@ -35,12 +35,16 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CircleShape2D" id=4]
+radius = 128.0
+
 [node name="EnemyUnit" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 7 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 9 )]
+visible = false
 margin_left = -51.5
 margin_top = -32.0
 margin_right = 976.5
@@ -63,8 +67,16 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource( 4 )
 [connection signal="empty" from="HealthBar" to="." method="_on_HealthBar_empty"]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_body_exited"]

@@ -11,11 +11,11 @@ var health_bar: CenterContainer
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 onready var loot: PackedScene = preload("res://loot/Loot.tscn")
-onready var player_ui: CanvasLayer = get_parent().get_parent().find_node("PlayerUI")
+onready var target: Vector2 = position
 
 
-func _physics_process(_delta) -> void:
-	move()
+func _init():
+	speed = 100
 
 
 func _on_ready() -> void:
@@ -24,14 +24,24 @@ func _on_ready() -> void:
 
 
 func move() -> void:
-	# TODO
-	pass
+	var direction = get_player_direction()
+	if direction.length() > NORMALIZED_MOVEMENT:
+		direction = direction.normalized()
+	if direction != Vector2.ZERO:
+		current_state = STATE.MOVING
+	else:
+		current_state = STATE.IDLE
+	var target_velocity: Vector2 = direction * speed
+	velocity += (target_velocity - velocity) * friction
+	velocity = move_and_slide(velocity)
 
 
-func get_player() -> KinematicBody2D:
-	var player: KinematicBody2D = get_tree().find_node("PlayerUnit")
-	print(player.name)
-	return player
+func get_player_direction() -> Vector2:
+	return target - position
+
+
+func set_target(new_target_position: Vector2) -> void:
+	target = new_target_position
 
 
 func attack() -> void:
@@ -49,8 +59,6 @@ func spawn_loot() -> void:
 	var loot_instance: Node2D = loot.instance()
 	get_parent().add_child(loot_instance)
 	loot_instance.position = position
-# warning-ignore:return_value_discarded
-	loot_instance.connect("picked_up", player_ui, "pick_up_loot")
 
 
 func die() -> void:
@@ -61,3 +69,14 @@ func die() -> void:
 
 func _on_HealthBar_empty() -> void:
 	call_deferred("die")
+
+
+func _on_PlayerDetection_body_entered(body) -> void:
+	health_bar.visible = true
+	set_target(body.position)
+
+
+func _on_PlayerDetection_body_exited(body) -> void:
+	set_target(body.position)
+	health_bar.visible = false
+	
