@@ -29,6 +29,5 @@ func _on_Timer_timeout() -> void:
 
 
 func _on_Area2D_area_entered(area) -> void:
-	print("hit " + area.get_parent().name)
 	area.get_parent().get_hurt(damage)
 	area.get_parent().apply_knockback(position, knockback)
