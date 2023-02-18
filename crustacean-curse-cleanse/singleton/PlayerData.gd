@@ -7,7 +7,7 @@ var luck: float = 1.0
 var time_modifier: float = 1.0
 var boon_selection: int = 0
 var soul_cost: int = 0
-var score: int = 0
+var wealth: int = 0
 var wealth_multiplier: float = 1.0
 
 
@@ -67,12 +67,12 @@ func set_soul_cost(new_cost: int) -> void:
 	soul_cost = new_cost
 
 
-func set_score(score_value: int) -> void:
-	score = score_value
+func set_wealth(wealth_value: int) -> void:
+	wealth = wealth_value
 
 
-func get_score() -> int:
-	return score
+func get_wealth() -> int:
+	return wealth
 
 
 func set_wealth_multiplier(new_multiplier: float) -> void:
@@ -84,11 +84,11 @@ func get_wealth_multiplier() -> float:
 
 
 func reset_player_data() -> void:
-	vision = 200.0
+	vision = 1.0
 	connection = 1.0
 	health_modifier = 1.0
 	luck = 1.0
 	time_modifier = 1.0
 	boon_selection = 0
-	score = 0
+	wealth = 0
 	wealth_multiplier = 1.0

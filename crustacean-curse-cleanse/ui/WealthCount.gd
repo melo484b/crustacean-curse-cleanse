@@ -11,11 +11,12 @@ onready var increase_animation: AnimationPlayer = $AnimationPlayer
 
 
 func _ready():
-	animated_increase(10)
+	pass
 
 
 func increase_wealth(wealth_to_add: int) -> void:
 	wealth += wealth_to_add
+	PlayerData.set_wealth(wealth)
 
 
 func update_label() -> void:

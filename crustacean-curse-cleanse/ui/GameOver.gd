@@ -7,12 +7,11 @@ onready var severed_label: Label = $SoulSeveredLabel
 onready var reclaimed_label: Label = $SoulReclaimedLabel
 
 func _ready() -> void:
-	PlayerData.set_score(-50)
 	$AnimationPlayer.play("game_over_screen")
 
 
 func show_player_wealth() -> void:
-	player_wealth_label.text += str(PlayerData.get_score())
+	player_wealth_label.text += str(PlayerData.get_wealth())
 
 
 func show_needed_wealth() -> void:
@@ -20,7 +19,7 @@ func show_needed_wealth() -> void:
 
 
 func show_result() -> void:
-	if PlayerData.get_score() >= PlayerData.get_soul_cost():
+	if PlayerData.get_wealth() >= PlayerData.get_soul_cost():
 		reclaimed_label.visible = true
 	else:
 		severed_label.visible = true

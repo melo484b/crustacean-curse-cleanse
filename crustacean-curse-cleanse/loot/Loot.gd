@@ -28,10 +28,15 @@ func generate_loot() -> void:
 		1:
 			animated_sprite.animation = "chalice_sparkle"
 			loot_value = CHALICE_VALUE
+	apply_loot_modifier()
+
+
+func apply_loot_modifier() -> void:
+	var loot_modifier = rng.randf_range(1.0, 2.0) * PlayerData.get_luck()
+	loot_value = int(loot_value * loot_modifier)
 
 
 func _on_PickupDetection_body_entered(body) -> void:
-	print("pickup area entered - BODY")
 	if body.is_in_group("PLAYER"):
 		emit_signal("picked_up", loot_value)
 		# TODO: Replace with sick animation
