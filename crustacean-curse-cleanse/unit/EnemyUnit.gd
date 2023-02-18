@@ -15,7 +15,7 @@ onready var weapon_node: Node2D = $UnitWeaponNode
 onready var target: Vector2 = position
 
 
-func _init():
+func _init() -> void:
 	speed = 100
 
 
@@ -48,12 +48,12 @@ func set_target(new_target_position: Vector2) -> void:
 
 
 func attack() -> void:
-	# TODO: Attack logic
+	# Currently handled in weapon script
 	pass
 
 
 func get_hurt(damage: float) -> void:
-	# TODO: Hurt sfx
+	$HurtSFXmanager.play()
 	current_state = STATE.HURTING
 	health_bar.take_damage(damage)
 
@@ -65,8 +65,12 @@ func spawn_loot() -> void:
 
 
 func die() -> void:
+	$DeathSFXmanager.play()
 	emit_signal("enemy_died", position)
 	spawn_loot()
+	# TODO: Replace with sick animation
+	visible = false
+	yield($DeathSFXmanager, "play_complete")
 	call_deferred("queue_free")
 
 
@@ -75,10 +79,12 @@ func _on_HealthBar_empty() -> void:
 
 
 func _on_PlayerDetection_body_entered(body) -> void:
+	weapon_node.get_child(0).activate()
 	health_bar.visible = true
 	set_target(body.position)
 
 
 func _on_PlayerDetection_body_exited(body) -> void:
+	weapon_node.get_child(0).deactivate()
 	set_target(body.position)
 	health_bar.visible = false

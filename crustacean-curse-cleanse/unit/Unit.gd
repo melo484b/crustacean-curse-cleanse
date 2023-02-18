@@ -63,8 +63,8 @@ func attack() -> void:
 
 
 func get_hurt(damage: float) -> void:
+	$HurtSFXmanager.play()
 	current_state = STATE.HURTING
-	# TODO: Hurt sfx
 	emit_signal("take_damage", damage)
 
 
@@ -73,4 +73,6 @@ func apply_knockback(knockback_location: Vector2, knockback_strength: int) -> vo
 
 
 func die() -> void:
+	$DeathSFXmanager.play()
+	yield($DeathSFXmanager, "play_complete")
 	call_deferred("queue_free")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://art/crab-idle1.png" type="Texture" id=1]
 [ext_resource path="res://art/crab-walk2.png" type="Texture" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://unit/EnemyUnit.gd" type="Script" id=7]
 [ext_resource path="res://weapon/WeaponNode.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/HealthBar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://manager/MoveSFXmanager.tscn" type="PackedScene" id=10]
+[ext_resource path="res://manager/HurtSFXmanager.tscn" type="PackedScene" id=11]
+[ext_resource path="res://manager/DeathSFXmanager.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.5
@@ -24,14 +27,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -77,6 +80,12 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource( 4 )
+
+[node name="HurtSFXmanager" parent="." instance=ExtResource( 11 )]
+
+[node name="DeathSFXmanager" parent="." instance=ExtResource( 12 )]
+
+[node name="MoveSFXmanager" parent="." instance=ExtResource( 10 )]
 [connection signal="empty" from="HealthBar" to="." method="_on_HealthBar_empty"]
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_body_exited"]
