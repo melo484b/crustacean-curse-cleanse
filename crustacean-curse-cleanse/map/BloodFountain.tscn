@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://art/blood_fountain2.png" type="Texture" id=1]
 [ext_resource path="res://art/blood_fountain1.png" type="Texture" id=2]
 [ext_resource path="res://art/blood_fountain3.png" type="Texture" id=3]
+[ext_resource path="res://light/PlayerUnitVision.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 8 )
@@ -25,3 +26,6 @@ shape = SubResource( 1 )
 frames = SubResource( 2 )
 frame = 2
 playing = true
+
+[node name="PlayerVision" parent="." instance=ExtResource( 4 )]
+color = Color( 0.564706, 0.447059, 0.458824, 1 )

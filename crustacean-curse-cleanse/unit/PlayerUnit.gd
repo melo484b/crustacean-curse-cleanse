@@ -2,6 +2,9 @@ class_name PlayerUnit
 extends Unit
 
 
+var player_vision: Light2D
+
+
 func _init() -> void:
 # warning-ignore:narrowing_conversion
 	health *= PlayerData.get_health_modifier()
@@ -10,6 +13,8 @@ func _init() -> void:
 
 func _on_ready() -> void:
 	$UnitWeaponNode.equip_player_weapon()
+	player_vision = $PlayerVision
+	player_vision.scale *= PlayerData.get_vision()
 
 
 func move() -> void:

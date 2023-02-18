@@ -30,3 +30,6 @@ position = Vector2( 572.957, 301.173 )
 position = Vector2( 395.608, 268.622 )
 
 [node name="PlayerUI" parent="." instance=ExtResource( 3 )]
+
+[node name="Darkness" type="CanvasModulate" parent="."]
+color = Color( 0.133333, 0.12549, 0.203922, 1 )

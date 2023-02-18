@@ -1,6 +1,6 @@
 extends Node
 
-var vision: float = 200.0
+var vision: float = 1.0
 var connection: float = 1.0
 var health_modifier: float = 1.0
 var luck: float = 1.0
