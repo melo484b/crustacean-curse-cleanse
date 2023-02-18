@@ -27,7 +27,7 @@ script = ExtResource( 7 )
 
 [node name="ClawAttackAnimationSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 3
+frame = 5
 script = ExtResource( 6 )
 
 [node name="Area2D" type="Area2D" parent="."]
