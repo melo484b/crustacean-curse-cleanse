@@ -33,3 +33,5 @@ position = Vector2( 395.608, 268.622 )
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 color = Color( 0.133333, 0.12549, 0.203922, 1 )
+[connection signal="game_time_up" from="PlayerUI" to="." method="_on_PlayerUI_game_time_up"]
+[connection signal="player_death" from="PlayerUI" to="." method="_on_PlayerUI_player_death"]
