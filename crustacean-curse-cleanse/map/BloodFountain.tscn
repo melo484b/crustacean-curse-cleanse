@@ -27,5 +27,4 @@ frames = SubResource( 2 )
 frame = 1
 playing = true
 
-[node name="PlayerVision" parent="." instance=ExtResource( 4 )]
-color = Color( 0.564706, 0.447059, 0.458824, 1 )
+[node name="FountainLight" parent="." instance=ExtResource( 4 )]
