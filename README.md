@@ -34,3 +34,5 @@ Changes made: Clipped footstep sounds
  - [Aseprite](https://www.aseprite.org/)
  - [Audacity](https://www.audacityteam.org/)
  - [jsfxr](https://sfxr.me
+##### Notes
+ - <em>The Mac release is untested.<em>
