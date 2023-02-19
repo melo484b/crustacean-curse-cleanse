@@ -12,11 +12,11 @@ var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 onready var loot: PackedScene = preload("res://loot/Loot.tscn")
 onready var weapon_node: Node2D = $UnitWeaponNode
-onready var target: Vector2 = position
+onready var target: KinematicBody2D = self
 
 
 func _init() -> void:
-	speed = 7000.0
+	speed = 5500.0
 
 
 func _on_ready() -> void:
@@ -38,11 +38,11 @@ func move(delta: float) -> void:
 
 
 func get_player_direction() -> Vector2:
-	return target - position
+	return (target.get_global_position() - get_global_position()).normalized()
 
 
-func set_target(new_target_position: Vector2) -> void:
-	target = new_target_position
+func set_target(new_target: KinematicBody2D) -> void:
+	target = new_target
 
 
 func attack() -> void:
@@ -79,10 +79,10 @@ func _on_HealthBar_empty() -> void:
 func _on_PlayerDetection_body_entered(body) -> void:
 	weapon_node.activate()
 	health_bar.visible = true
-	call_deferred("set_target", body.position)
+	call_deferred("set_target", body)
 
 
 func _on_PlayerDetection_body_exited(body) -> void:
 	weapon_node.deactivate()
-	call_deferred("set_target", body.position)
+	call_deferred("set_target", self)
 	health_bar.visible = false
