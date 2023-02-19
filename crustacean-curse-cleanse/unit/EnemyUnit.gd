@@ -82,7 +82,7 @@ func _on_PlayerDetection_body_entered(body) -> void:
 	call_deferred("set_target", body)
 
 
-func _on_PlayerDetection_body_exited(body) -> void:
+func _on_PlayerDetection_body_exited(_body) -> void:
 	weapon_node.deactivate()
 	call_deferred("set_target", self)
 	health_bar.visible = false

@@ -71,6 +71,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]
