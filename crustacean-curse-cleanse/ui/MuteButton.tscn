@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ui/MuteButton.gd" type="Script" id=1]
-[ext_resource path="res://art/audio_off.png" type="Texture" id=2]
+[ext_resource path="res://art/audio_on.png" type="Texture" id=2]
 [ext_resource path="res://resources/ui_theme.tres" type="Theme" id=3]
 
 [node name="MuteButton" type="MarginContainer"]
