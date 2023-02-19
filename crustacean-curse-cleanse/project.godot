@@ -52,6 +52,7 @@ _global_script_class_icons={
 
 config/name="crustacean-curse-cleanse"
 run/main_scene="res://level/Level.tscn"
+boot_splash/image="res://art/splash.png"
 
 [audio]
 
