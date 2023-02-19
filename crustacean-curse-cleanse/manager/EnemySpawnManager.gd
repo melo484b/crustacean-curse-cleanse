@@ -9,6 +9,9 @@ onready var spawn_layer: YSort = get_parent().get_node("SpawnLayer")
 
 func _ready() -> void:
 	spawn_enemy(Vector2(100, 100))
+	spawn_enemy(Vector2(200, 100))
+	spawn_enemy(Vector2(150, 100))
+	spawn_enemy(Vector2(100, 150))
 
 
 func spawn_enemy(spawn_position: Vector2) -> void:
