@@ -2,7 +2,7 @@
 Entry for Godot Wild Jam #54
 ![screenshot](https://user-images.githubusercontent.com/95886475/219910276-6f80689b-5a34-4418-9fe5-4ec41f447631.png)
 ### Story
-In a very unfortunate twist of events, your virtuous life as a convergent lifeform has come to an end. Claim riches from defiled decapods and buy your soul back from the Father of Carcinisation.
+In a very unfortunate twist of events, your virtuous life as a convergent lifeform has come to an end. Claim riches from defiled decapods and buy your soul back from the Father of Carcinisation. Submit to curses to multiply your riches. Will it be enough?
 ### Controls
  - WASD to move
  - L click to attack with the Cannon or Laser
