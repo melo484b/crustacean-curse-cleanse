@@ -25,6 +25,12 @@ func equip_player_weapon() -> void:
 			add_child(laser.instance())
 		2:
 			add_child(cannon.instance())
+		3:
+			var claw_instance: Weapon = claw.instance()
+			claw_instance.scale = Vector2(3, 3)
+			add_child(claw_instance)
+			add_child(cannon.instance())
+			add_child(laser.instance())
 
 
 func activate() -> void:

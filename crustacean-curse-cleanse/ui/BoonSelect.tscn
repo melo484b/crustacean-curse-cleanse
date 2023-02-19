@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://art/laser.png" type="Texture" id=1]
 [ext_resource path="res://art/cannon.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://ui/SoulCost.tscn" type="PackedScene" id=6]
 [ext_resource path="res://manager/PressSFXmanager.tscn" type="PackedScene" id=7]
 [ext_resource path="res://manager/HoverSFXmanager.tscn" type="PackedScene" id=8]
+[ext_resource path="res://manager/SFXmanager.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sfx/power_up_2.wav" type="AudioStream" id=10]
 
 [node name="BoonSelect" type="CanvasLayer"]
 script = ExtResource( 4 )
@@ -109,6 +111,11 @@ text = "CONFIRM"
 [node name="HoverSFX" parent="." instance=ExtResource( 8 )]
 
 [node name="PressSFX" parent="." instance=ExtResource( 7 )]
+
+[node name="CheatSFXmanager" parent="." instance=ExtResource( 9 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CheatSFXmanager"]
+stream = ExtResource( 10 )
 [connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BoonButtons/Boon1" to="." method="_on_Boon1_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BoonButtons/Boon1" to="." method="_on_Boon1_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BoonButtons/Boon2" to="." method="_on_Boon2_mouse_entered"]

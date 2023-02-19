@@ -7,12 +7,25 @@ signal boon_confirmed
 var selected: int = 0
 
 onready var boon_buttons: HBoxContainer = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BoonButtons
+onready var cheat_sfx: Node = $CheatSFXmanager
+
+
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("cheater"):
+		activate_cheat_mode()
+		cheat_sfx.play()
 
 
 func uncheck_other_buttons(button_name: String) -> void:
 	for button in boon_buttons.get_children():
 		if button.name != button_name:
 			button.pressed = false
+
+
+func activate_cheat_mode() -> void:
+	selected = 3
+	for button in boon_buttons.get_children():
+		button.pressed = true
 
 
 func _on_Boon1_pressed() -> void:
