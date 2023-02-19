@@ -20,3 +20,8 @@ bus = "SFX"
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="CannonSFXmanager"]
 stream = ExtResource( 3 )
 bus = "SFX"
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+[connection signal="timeout" from="FireTimer" to="." method="_on_FireTimer_timeout"]

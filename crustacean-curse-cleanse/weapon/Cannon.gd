@@ -25,5 +25,8 @@ func attack() -> void:
 		ball_instance.set_damage(damage)
 		ball_instance.set_knockback(knockback)
 		ball_instance.set_target(get_global_mouse_position())
-		yield(get_tree().create_timer(0.25), "timeout")
-		fired = false
+		$FireTimer.start()
+
+
+func _on_FireTimer_timeout():
+	fired = false
