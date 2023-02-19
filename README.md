@@ -1,4 +1,4 @@
-# curse-crumbling-bargain
+# Crustacean Curse Cleanse
 Entry for Godot Wild Jam #54
 ![screenshot](https://user-images.githubusercontent.com/95886475/219910276-6f80689b-5a34-4418-9fe5-4ec41f447631.png)
 ### Story
@@ -34,3 +34,5 @@ Changes made: Clipped footstep sounds
  - [Aseprite](https://www.aseprite.org/)
  - [Audacity](https://www.audacityteam.org/)
  - [jsfxr](https://sfxr.me
+##### Notes
+ - <em>The Mac release is untested.<em>
