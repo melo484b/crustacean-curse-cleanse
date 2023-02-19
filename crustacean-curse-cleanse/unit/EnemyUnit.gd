@@ -38,7 +38,7 @@ func move(delta: float) -> void:
 
 
 func get_player_direction() -> Vector2:
-	return (target.get_global_position() - get_global_position()).normalized()
+	return (target.get_global_position() - get_global_position())
 
 
 func set_target(new_target: KinematicBody2D) -> void:
