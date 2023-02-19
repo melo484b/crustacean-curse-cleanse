@@ -1,25 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://manager/EnemySpawnManager.gd" type="Script" id=1]
-[ext_resource path="res://map/SpawnPoint.tscn" type="PackedScene" id=2]
 
 [node name="EnemySpawnManager" type="Node"]
 script = ExtResource( 1 )
 
 [node name="WaveTimer" type="Timer" parent="."]
 wait_time = 4.5
-
-[node name="SpawnPoints" type="Node" parent="."]
-
-[node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource( 2 )]
-position = Vector2( 120.136, 82.7601 )
-
-[node name="SpawnPoint2" parent="SpawnPoints" instance=ExtResource( 2 )]
-position = Vector2( 295, 76.0859 )
-
-[node name="SpawnPoint3" parent="SpawnPoints" instance=ExtResource( 2 )]
-position = Vector2( 43, 278.981 )
-
-[node name="SpawnPoint4" parent="SpawnPoints" instance=ExtResource( 2 )]
-position = Vector2( 632.714, 76.0859 )
+one_shot = true
 [connection signal="timeout" from="WaveTimer" to="." method="_on_WaveTimer_timeout"]

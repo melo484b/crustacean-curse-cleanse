@@ -6,7 +6,6 @@ var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 onready var enemy: PackedScene = preload("res://unit/EnemyUnit.tscn")
 onready var spawn_layer: YSort = get_parent().get_node("SpawnLayer")
 onready var wave_timer: Timer = $WaveTimer
-onready var spawn_points: Node = $SpawnPoints
 
 
 func _ready() -> void:
@@ -14,15 +13,11 @@ func _ready() -> void:
 
 
 func spawn_wave() -> void:
-	for point in spawn_points.get_children():
-		if point.is_ready():
-			spawn_enemy(point.position)
-			point.start_spawn_timer()
-
-
-func randomize_spawn_points() -> void:
-	for point in spawn_points.get_children():
-		point.shuffle_position()
+	for child in spawn_layer.get_children():
+		var x_pos: float = rng.randf_range(-10.0, 10.0)
+		if child.is_in_group("FOUNTAIN"):
+			spawn_enemy(child.position + Vector2(x_pos, 0))
+	wave_timer.wait_time = rng.randi_range(2, 9)
 
 
 func spawn_enemy(spawn_position: Vector2) -> void:
@@ -33,4 +28,3 @@ func spawn_enemy(spawn_position: Vector2) -> void:
 
 func _on_WaveTimer_timeout() -> void:
 	spawn_wave()
-	randomize_spawn_points()

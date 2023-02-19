@@ -12,8 +12,7 @@ onready var timer: Timer = $ReadyTimer
 
 
 func _ready():
-	set_timer_length()
-	shuffle_position()
+	rng.randomize()
 
 
 func shuffle_position() -> void:
@@ -23,8 +22,7 @@ func shuffle_position() -> void:
 
 
 func set_timer_length() -> void:
-	rng.randomize()
-	timer.wait_time = rng.randi_range(3, 10)
+	timer.wait_time = rng.randi_range(3, 9)
 
 
 func start_spawn_timer() -> void:
@@ -36,6 +34,6 @@ func is_ready() -> bool:
 	return ready
 
 
-func _on_ReadyTimer_timeout():
+func _on_ReadyTimer_timeout() -> void:
 	ready = true
 	set_timer_length()

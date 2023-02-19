@@ -35,7 +35,7 @@ func generate_loot() -> void:
 
 
 func apply_loot_modifier() -> void:
-	var loot_modifier = rng.randf_range(1.0, 2.0) * PlayerData.get_luck()
+	var loot_modifier = rng.randf_range(1.0, 2.0) * PlayerData.get_luck() * PlayerData.get_wealth_multiplier()
 	loot_value = int(loot_value * loot_modifier)
 
 
