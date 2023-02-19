@@ -18,7 +18,9 @@ func _ready():
 func equip_player_weapon() -> void:
 	match PlayerData.get_boon_selection():
 		0:
-			add_child(claw.instance())
+			var claw_instance: Weapon = claw.instance()
+			claw_instance.scale = Vector2(3, 3)
+			add_child(claw_instance)
 		1:
 			add_child(laser.instance())
 		2:
