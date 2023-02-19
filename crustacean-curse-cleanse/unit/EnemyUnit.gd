@@ -6,9 +6,12 @@ signal enemy_died(enemy_position)
 
 
 const EVIL_MODULATION: String = "#820000"
+const SPEED_MODIFIER: float = 1.5
 
 var health_bar: CenterContainer
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+var has_vision_of_player: bool = false
+var previous_target_location: Vector2
 
 onready var loot: PackedScene = preload("res://loot/Loot.tscn")
 onready var weapon_node: Node2D = $UnitWeaponNode
@@ -16,12 +19,14 @@ onready var target: KinematicBody2D = self
 
 
 func _init() -> void:
-	speed = 5500.0
+	speed = 3666.66
 
 
 func _on_ready() -> void:
+	rng.randomize()
 	health_bar = $HealthBar
 	animation.modulate = EVIL_MODULATION
+	previous_target_location = generate_random_target()
 
 
 func move(delta: float) -> void:
@@ -38,7 +43,16 @@ func move(delta: float) -> void:
 
 
 func get_player_direction() -> Vector2:
-	return (target.get_global_position() - get_global_position())
+	if has_vision_of_player:
+		return (target.get_global_position() - get_global_position())
+	else:
+		return (previous_target_location - get_global_position())
+
+
+func generate_random_target() -> Vector2:
+	var x_pos: float = rng.randf_range(64, 960)
+	var y_pos: float = rng.randf_range(64, 536)
+	return Vector2(x_pos, y_pos)
 
 
 func set_target(new_target: KinematicBody2D) -> void:
@@ -77,12 +91,22 @@ func _on_HealthBar_empty() -> void:
 
 
 func _on_PlayerDetection_body_entered(body) -> void:
+	speed *= SPEED_MODIFIER
+	has_vision_of_player = true
 	weapon_node.activate()
 	health_bar.visible = true
 	call_deferred("set_target", body)
 
 
 func _on_PlayerDetection_body_exited(_body) -> void:
+	speed /= SPEED_MODIFIER
+	previous_target_location = target.get_global_position()
+	has_vision_of_player = false
 	weapon_node.deactivate()
-	call_deferred("set_target", self)
 	health_bar.visible = false
+
+
+func _on_BoredTimer_timeout() -> void:
+	$BoredTimer.wait_time = rng.randi_range(3, 6)
+	if !has_vision_of_player:
+		previous_target_location = generate_random_target()
