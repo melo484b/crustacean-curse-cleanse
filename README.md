@@ -33,7 +33,7 @@ Changes made: Clipped footstep sounds
  - [Godot v3.5.1](https://godotengine.org/)
  - [Aseprite](https://www.aseprite.org/)
  - [Audacity](https://www.audacityteam.org/)
- - [jsfxr](https://sfxr.me
+ - [jsfxr](https://sfxr.me)
 ##### Notes
  - <em>Mac release untested<em>
  - <em>Windows release tested on Windows 11 & 10<em>
