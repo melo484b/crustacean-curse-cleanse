@@ -1,5 +1,5 @@
 # Crustacean Curse Cleanse
-Entry for Godot Wild Jam #54
+Entry for Godot Wild Jam #54 - [Try it!](https://melo484b.itch.io/crustacean-curse-cleanse)
 ![screenshot](https://user-images.githubusercontent.com/95886475/219910276-6f80689b-5a34-4418-9fe5-4ec41f447631.png)
 ### Story
 In a very unfortunate twist of events, your virtuous life as a convergent lifeform has come to an end. Claim riches from defiled decapods and buy your soul back from the Father of Carcinisation. Submit to curses to multiply your riches. Will it be enough?
@@ -35,4 +35,6 @@ Changes made: Clipped footstep sounds
  - [Audacity](https://www.audacityteam.org/)
  - [jsfxr](https://sfxr.me
 ##### Notes
- - <em>The Mac release is untested.<em>
+ - <em>Mac release untested<em>
+ - <em>Windows release tested on Windows 11 & 10<em>
+ - <em>Linux release tested on Ubuntu 20.04<em>
