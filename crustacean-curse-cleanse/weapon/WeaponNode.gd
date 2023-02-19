@@ -2,9 +2,17 @@ class_name WeaponNode
 extends Node2D
 
 
+export var attached_to_enemy: bool = false
+
 onready	var claw: PackedScene = preload("res://weapon/Claw.tscn")
 onready	var laser: PackedScene = preload("res://weapon/Laser.tscn")
 onready	var cannon: PackedScene = preload("res://weapon/Cannon.tscn")
+
+
+func _ready():
+	if attached_to_enemy:
+		deactivate()
+		get_child(0).init_enemy_weapon()
 
 
 func equip_player_weapon() -> void:
@@ -17,8 +25,11 @@ func equip_player_weapon() -> void:
 			add_child(cannon.instance())
 
 
-func equip_enemy_weapon() -> void:
-	var claw_weapon: Weapon = claw.instance()
-	add_child(claw_weapon)
-	claw_weapon.init_enemy_weapon()
+func activate() -> void:
+	if get_child(0).has_method("activate"):
+		get_child(0).activate()
 	
+
+func deactivate() -> void:
+	if get_child(0).has_method("deactivate"):
+		get_child(0).deactivate()

@@ -22,8 +22,6 @@ func _init() -> void:
 func _on_ready() -> void:
 	health_bar = $HealthBar
 	animation.modulate = EVIL_MODULATION
-	yield(get_tree().root, "ready")
-	weapon_node.equip_enemy_weapon()
 
 
 func move() -> void:
@@ -79,12 +77,12 @@ func _on_HealthBar_empty() -> void:
 
 
 func _on_PlayerDetection_body_entered(body) -> void:
-	weapon_node.get_child(0).activate()
+	weapon_node.activate()
 	health_bar.visible = true
-	set_target(body.position)
+	call_deferred("set_target", body.position)
 
 
 func _on_PlayerDetection_body_exited(body) -> void:
-	weapon_node.get_child(0).deactivate()
-	set_target(body.position)
+	weapon_node.deactivate()
+	call_deferred("set_target", body.position)
 	health_bar.visible = false
