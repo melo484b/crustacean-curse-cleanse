@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://map/BloodFountain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level/Level.gd" type="Script" id=2]
@@ -8,6 +8,22 @@
 [ext_resource path="res://manager/EnemySpawnManager.tscn" type="PackedScene" id=7]
 [ext_resource path="res://music/darkness-haunts-by-tim-kulig-from-filmmusic-io-preview-quality.ogg" type="AudioStream" id=8]
 [ext_resource path="res://music/disorder-in-the-soul-by-michal-mojzykiewicz-from-filmmusic-io-best-quality.ogg" type="AudioStream" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "reveal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Darkness:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.133333, 0.12549, 0.203922, 1 ), Color( 0.890196, 0.878431, 0.882353, 1 ) ]
+}
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -44,7 +60,6 @@ position = Vector2( 572.957, 301.173 )
 [node name="PlayerUI" parent="." instance=ExtResource( 3 )]
 
 [node name="Darkness" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0.133333, 0.12549, 0.203922, 1 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
@@ -55,5 +70,8 @@ bus = "Music"
 stream = ExtResource( 8 )
 volume_db = 7.526
 bus = "Environment"
+
+[node name="RevealMap" type="AnimationPlayer" parent="."]
+anims/reveal = SubResource( 1 )
 [connection signal="game_time_up" from="PlayerUI" to="." method="_on_PlayerUI_game_time_up"]
 [connection signal="player_death" from="PlayerUI" to="." method="_on_PlayerUI_player_death"]

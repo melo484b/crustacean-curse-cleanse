@@ -15,6 +15,7 @@ onready var environment: AudioStreamPlayer = $Environment
 
 onready var spawn_layer: YSort = $SpawnLayer
 onready var player_ui: CanvasLayer = $PlayerUI
+onready var reveal_animation: AnimationPlayer = $RevealMap
 
 
 func _ready() -> void:
@@ -57,6 +58,7 @@ func spawn_player() -> void:
 
 
 func show_game_over() -> void:
+	reveal_animation.play("reveal")
 	var game_over_instance = game_over.instance()
 	add_child(game_over_instance)
 
