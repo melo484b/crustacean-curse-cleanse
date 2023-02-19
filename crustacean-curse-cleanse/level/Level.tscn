@@ -18,22 +18,22 @@ script = ExtResource( 2 )
 
 [node name="SpawnLayer" type="YSort" parent="."]
 
-[node name="StaticBody2D" parent="SpawnLayer" groups=[
+[node name="BloodFountain" parent="SpawnLayer" groups=[
 "FOUNTAIN",
 ] instance=ExtResource( 1 )]
 position = Vector2( 178, 150 )
 
-[node name="StaticBody2D2" parent="SpawnLayer" groups=[
+[node name="BloodFountain2" parent="SpawnLayer" groups=[
 "FOUNTAIN",
 ] instance=ExtResource( 1 )]
 position = Vector2( 846, 150 )
 
-[node name="StaticBody2D3" parent="SpawnLayer" groups=[
+[node name="BloodFountain3" parent="SpawnLayer" groups=[
 "FOUNTAIN",
 ] instance=ExtResource( 1 )]
 position = Vector2( 178, 475 )
 
-[node name="StaticBody2D4" parent="SpawnLayer" groups=[
+[node name="BloodFountain4" parent="SpawnLayer" groups=[
 "FOUNTAIN",
 ] instance=ExtResource( 1 )]
 position = Vector2( 846, 475 )
@@ -44,6 +44,7 @@ position = Vector2( 572.957, 301.173 )
 [node name="PlayerUI" parent="." instance=ExtResource( 3 )]
 
 [node name="Darkness" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.133333, 0.12549, 0.203922, 1 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
