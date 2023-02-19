@@ -14,6 +14,10 @@ func start_ui_timer() -> void:
 	ui_timer.start()
 
 
+func stop_ui_timer() -> void:
+	ui_timer.stop()
+
+
 func reduce_health_bar(damage: float) -> void:
 	health_bar.take_damage(damage)
 

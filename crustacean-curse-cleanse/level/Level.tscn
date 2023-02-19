@@ -38,6 +38,7 @@ bus = "Music"
 
 [node name="Environment" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = 7.526
 bus = "Environment"
 [connection signal="game_time_up" from="PlayerUI" to="." method="_on_PlayerUI_game_time_up"]
 [connection signal="player_death" from="PlayerUI" to="." method="_on_PlayerUI_player_death"]

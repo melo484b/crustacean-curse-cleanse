@@ -29,6 +29,7 @@ func show_start_menu() -> void:
 
 
 func show_boon_select() -> void:
+	environment.play()
 	var boon_select_instance = boon_select.instance()
 	add_child(boon_select_instance)
 # warning-ignore:return_value_discarded
@@ -36,7 +37,6 @@ func show_boon_select() -> void:
 
 
 func show_contract() -> void:
-	environment.play()
 	var contract_menu_instance = contract_menu.instance()
 	add_child(contract_menu_instance)
 # warning-ignore:return_value_discarded
@@ -68,4 +68,5 @@ func _on_PlayerUI_game_time_up() -> void:
 
 func _on_PlayerUI_player_death() -> void:
 	spawn_layer.get_node("PlayerUnit").die()
+	player_ui.stop_ui_timer()
 	show_game_over()
