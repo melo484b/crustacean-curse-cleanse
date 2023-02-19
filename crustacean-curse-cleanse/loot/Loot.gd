@@ -12,6 +12,7 @@ var animation_index: int
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 onready var animated_sprite: AnimatedSprite = $AnimatedSprite
+onready var pickup_sfx: Node = $LootPickupSFXmanager
 onready var player_ui: CanvasLayer = get_parent().get_parent().find_node("PlayerUI")
 
 
@@ -42,8 +43,8 @@ func apply_loot_modifier() -> void:
 func _on_PickupDetection_body_entered(body) -> void:
 	if body.is_in_group("PLAYER"):
 		emit_signal("picked_up", loot_value)
-		$LootPickupSFXmanager.play()
+		pickup_sfx.play()
 		# TODO: Replace with sick animation
 		visible = false
-		yield($LootPickupSFXmanager, "play_complete")
+		yield(pickup_sfx, "play_complete")
 		call_deferred("queue_free")
