@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/outdoor_step.ogg-ea392fd07f68c438c8d4a76437129bff.oggstr"
+
+[deps]
+
+source_file="res://sfx/outdoor_step.ogg"
+dest_files=[ "res://.import/outdoor_step.ogg-ea392fd07f68c438c8d4a76437129bff.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
