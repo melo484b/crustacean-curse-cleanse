@@ -49,6 +49,9 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Beam_1/HitArea"]
 shape = SubResource( 2 )
 
+[node name="DamageEffectTimer" type="Timer" parent="Beam_1"]
+wait_time = 0.2
+
 [node name="Beam_2" type="Line2D" parent="."]
 points = PoolVector2Array( 9, -10 )
 width = 8.0
@@ -76,6 +79,9 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Beam_2/HitArea"]
 shape = SubResource( 2 )
+
+[node name="DamageEffectTimer" type="Timer" parent="Beam_2"]
+wait_time = 0.2
 
 [node name="AttackCooldown" type="Timer" parent="."]
 wait_time = 0.3
@@ -112,6 +118,9 @@ pitch_scale = 1.1
 bus = "SFX"
 [connection signal="area_entered" from="Beam_1/HitArea" to="Beam_1" method="_on_HitArea_area_entered"]
 [connection signal="area_entered" from="Beam_1/HitArea" to="." method="_on_HitArea_area_entered"]
+[connection signal="timeout" from="Beam_1/DamageEffectTimer" to="Beam_2" method="_on_DamageEffectTimer_timeout"]
+[connection signal="timeout" from="Beam_1/DamageEffectTimer" to="Beam_1" method="_on_DamageEffectTimer_timeout"]
 [connection signal="area_entered" from="Beam_2/HitArea" to="Beam_2" method="_on_HitArea_area_entered"]
 [connection signal="area_entered" from="Beam_2/HitArea" to="." method="_on_HitArea_area_entered"]
+[connection signal="timeout" from="Beam_2/DamageEffectTimer" to="Beam_2" method="_on_DamageEffectTimer_timeout"]
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_AttackCooldown_timeout"]

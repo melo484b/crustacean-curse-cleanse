@@ -7,6 +7,7 @@ var target: Vector2 = Vector2()
 onready var cast: RayCast2D = $RayCast2D
 onready var particles: Particles2D = $LaserParticles
 onready var hit_area: Area2D = $HitArea
+onready var effect_timer: Timer = $DamageEffectTimer
 
 
 func _ready() -> void:
@@ -21,11 +22,9 @@ func fire() -> void:
 		particles.position = target
 		hit_area.position = target
 		hit_area.monitoring = true
-		toggle_particles()
-		yield(get_tree().create_timer(0.2), "timeout")
-		hit_area.monitoring = false
-		can_fire = true
-		toggle_particles()
+		particles.visible = true
+		effect_timer.start()
+		yield(effect_timer, "timeout")
 		remove_point(1)
 
 
@@ -34,14 +33,13 @@ func check_for_collision() -> void:
 	cast.cast_to = target
 	if cast.is_colliding():
 		target = cast.get_collision_point()
-	
-	
-func toggle_particles() -> void:
-	if particles.visible:
-		particles.visible = false
-	else:
-		particles.visible = true
 
 
 func _on_HitArea_area_entered(_area) -> void:
 	hit_area.set_deferred("monitoring", false)
+
+
+func _on_DamageEffectTimer_timeout() -> void:
+	hit_area.monitoring = false
+	can_fire = true
+	particles.visible = false
