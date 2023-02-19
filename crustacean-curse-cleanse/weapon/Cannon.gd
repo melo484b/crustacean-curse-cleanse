@@ -6,8 +6,8 @@ var target: Vector2 = Vector2()
 var fired: bool = false
 
 func _init() -> void:
-	damage = 3.2
-	knockback = 10
+	damage = 3.3
+	knockback = 800
 
 
 func _unhandled_input(_event) -> void:

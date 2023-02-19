@@ -72,4 +72,4 @@ func _on_HitDetectionArea_area_entered(area) -> void:
 		target = position
 		explode()
 		area.get_parent().get_hurt(damage)
-		area.get_parent().apply_knockback(position, knockback)
+		area.get_parent().apply_knockback(get_global_position(), knockback)

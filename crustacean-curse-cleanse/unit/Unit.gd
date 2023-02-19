@@ -10,7 +10,7 @@ enum STATE { MOVING, IDLE, HURTING }
 const NORMALIZED_MOVEMENT: float = 1.0
 const MOVEMENT_CONTROLS: Array = ["up", "down", "left", "right"]
 
-export var speed: float = 200.0
+export var speed: float = 7000.0
 export var friction: float = 0.1
 var knockback_vector: Vector2 = Vector2()
 var velocity: Vector2 = Vector2()
@@ -26,8 +26,8 @@ func _ready() -> void:
 	_on_ready()
 
 
-func _physics_process(_delta) -> void:
-	move()
+func _physics_process(delta) -> void:
+	move(delta)
 	animate_movement()
 	var _knockback = move_and_slide(knockback_vector)
 	knockback_vector = lerp(knockback_vector, Vector2.ZERO, 0.2)
@@ -37,7 +37,7 @@ func _on_ready() -> void:
 	pass
 
 
-func move() -> void:
+func move(delta: float) -> void:
 	pass
 
 
@@ -69,7 +69,7 @@ func get_hurt(damage: float) -> void:
 
 
 func apply_knockback(knockback_location: Vector2, knockback_strength: int) -> void:
-	knockback_vector = (global_position - knockback_location) * knockback_strength
+	knockback_vector = (global_position - knockback_location).normalized() * knockback_strength
 
 
 func die() -> void:

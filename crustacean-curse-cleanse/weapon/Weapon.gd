@@ -4,6 +4,7 @@ extends Node2D
 var damage: float = 0.0
 var knockback: int = 0
 var previous_direction: Vector2 = Vector2()
+var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func attack() -> void:
 	pass

@@ -18,7 +18,7 @@ func _unhandled_input(_event) -> void:
 
 func _init() -> void:
 	damage = 5.5
-	knockback = 0
+	knockback = 100
 
 
 func attack() -> void:
@@ -39,6 +39,7 @@ func _on_HitArea_area_entered(area) -> void:
 	if not area.is_in_group("PLAYER"):
 		$LaserHitSFXmanager.play()
 		area.get_parent().get_hurt(damage)
+		area.get_parent().apply_knockback(get_global_position(), knockback)
 
 
 func _on_AttackCooldown_timeout() -> void:

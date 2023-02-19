@@ -17,7 +17,7 @@ func _on_ready() -> void:
 	player_vision.scale *= PlayerData.get_vision()
 
 
-func move() -> void:
+func move(delta: float) -> void:
 	var direction: Vector2 = get_input_direction()
 	if direction.length() > NORMALIZED_MOVEMENT:
 		direction = direction.normalized()
@@ -25,6 +25,6 @@ func move() -> void:
 		current_state = STATE.MOVING
 	else:
 		current_state = STATE.IDLE
-	var target_velocity: Vector2 = direction * speed
+	var target_velocity: Vector2 = direction * speed * delta
 	velocity += (target_velocity - velocity) * friction
 	velocity = move_and_slide(velocity)

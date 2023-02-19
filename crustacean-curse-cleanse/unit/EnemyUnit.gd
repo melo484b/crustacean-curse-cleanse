@@ -16,7 +16,7 @@ onready var target: Vector2 = position
 
 
 func _init() -> void:
-	speed = 100
+	speed = 7000.0
 
 
 func _on_ready() -> void:
@@ -24,8 +24,7 @@ func _on_ready() -> void:
 	animation.modulate = EVIL_MODULATION
 
 
-func move() -> void:
-	$MoveSFXmanager.play()
+func move(delta: float) -> void:
 	var direction = get_player_direction()
 	if direction.length() > NORMALIZED_MOVEMENT:
 		direction = direction.normalized()
@@ -33,7 +32,7 @@ func move() -> void:
 		current_state = STATE.MOVING
 	else:
 		current_state = STATE.IDLE
-	var target_velocity: Vector2 = direction * speed
+	var target_velocity: Vector2 = direction * speed * delta
 	velocity += (target_velocity - velocity) * friction
 	velocity = move_and_slide(velocity)
 

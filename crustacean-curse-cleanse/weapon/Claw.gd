@@ -12,7 +12,7 @@ onready var animation: AnimatedSprite = $ClawAttackAnimationSprite
 
 func _init() -> void:
 	damage = 2.5
-	knockback = 5
+	knockback = 500
 
 
 func init_enemy_weapon() -> void:
@@ -54,4 +54,4 @@ func _on_Timer_timeout() -> void:
 
 func _on_Area2D_area_entered(area) -> void:
 	area.get_parent().get_hurt(damage)
-	area.get_parent().apply_knockback(position, knockback)
+	area.get_parent().apply_knockback(get_global_position(), knockback)
