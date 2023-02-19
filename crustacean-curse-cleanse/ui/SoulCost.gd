@@ -8,7 +8,7 @@ onready var cost_label: Label = $MarginContainer/PanelContainer/MarginContainer/
 
 func _init():
 	rng.randomize()
-	soul_cost = rng.randi_range(10000, 1000000)
+	soul_cost = rng.randi_range(10000, 100000)
 
 
 func _ready() -> void:
