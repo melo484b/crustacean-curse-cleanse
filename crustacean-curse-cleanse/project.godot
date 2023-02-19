@@ -62,6 +62,11 @@ default_bus_layout="res://resources/default_bus_layout.tres"
 
 PlayerData="*res://singleton/PlayerData.tscn"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
