@@ -14,6 +14,7 @@ onready var music: AudioStreamPlayer = $Music
 onready var environment: AudioStreamPlayer = $Environment
 
 onready var spawn_layer: YSort = $SpawnLayer
+onready var enemy_spawn_manager: Node = $EnemySpawnManager
 onready var player_ui: CanvasLayer = $PlayerUI
 onready var reveal_animation: AnimationPlayer = $RevealMap
 
@@ -53,6 +54,7 @@ func spawn_player() -> void:
 	player.position = Vector2(512, 300)
 	player.connect("take_damage", player_ui, "reduce_health_bar")
 	spawn_layer.add_child(player)
+	enemy_spawn_manager.spawn_wave()
 	start_timer()
 	music.play()
 

@@ -15,7 +15,6 @@ onready var wave_timer: Timer = $WaveTimer
 
 func _ready() -> void:
 	rng.randomize()
-	wave_timer.start()
 
 
 func spawn_wave() -> void:
