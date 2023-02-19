@@ -10,7 +10,7 @@ onready var boon_buttons: HBoxContainer = $MarginContainer/PanelContainer/Margin
 onready var cheat_sfx: Node = $CheatSFXmanager
 
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_just_pressed("cheater"):
 		activate_cheat_mode()
 		cheat_sfx.play()
