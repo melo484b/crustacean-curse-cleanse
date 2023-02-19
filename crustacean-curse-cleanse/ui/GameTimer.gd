@@ -11,6 +11,10 @@ func start() -> void:
 	$Timer.start()
 
 
+func stop() -> void:
+	$Timer.stop()
+
+
 func update_text() -> void:
 	text = str(game_time)
 
