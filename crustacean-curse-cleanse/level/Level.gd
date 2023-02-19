@@ -62,8 +62,10 @@ func show_game_over() -> void:
 
 
 func _on_PlayerUI_game_time_up() -> void:
+	spawn_layer.get_node("PlayerUnit").die()
 	show_game_over()
 
 
 func _on_PlayerUI_player_death() -> void:
+	spawn_layer.get_node("PlayerUnit").die()
 	show_game_over()

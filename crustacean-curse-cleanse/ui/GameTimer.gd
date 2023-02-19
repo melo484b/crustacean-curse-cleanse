@@ -27,6 +27,6 @@ func _on_Timer_timeout() -> void:
 	if game_time > 0:
 		game_time -= 1
 	else:
-		print("time exhausted")
+		$Timer.stop()
 		emit_signal("time_exhausted")
 	update_text()
