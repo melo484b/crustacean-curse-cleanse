@@ -19,10 +19,16 @@ script = ExtResource( 2 )
 [node name="SpawnLayer" type="YSort" parent="."]
 
 [node name="StaticBody2D" parent="SpawnLayer" instance=ExtResource( 1 )]
-position = Vector2( 432, 159 )
+position = Vector2( 178, 150 )
 
 [node name="StaticBody2D2" parent="SpawnLayer" instance=ExtResource( 1 )]
-position = Vector2( 75, 168 )
+position = Vector2( 846, 150 )
+
+[node name="StaticBody2D3" parent="SpawnLayer" instance=ExtResource( 1 )]
+position = Vector2( 178, 475 )
+
+[node name="StaticBody2D4" parent="SpawnLayer" instance=ExtResource( 1 )]
+position = Vector2( 846, 475 )
 
 [node name="Loot" parent="SpawnLayer" instance=ExtResource( 6 )]
 position = Vector2( 572.957, 301.173 )

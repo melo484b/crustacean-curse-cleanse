@@ -25,6 +25,7 @@ func _on_ready() -> void:
 
 
 func move() -> void:
+	$MoveSFXmanager.play()
 	var direction = get_player_direction()
 	if direction.length() > NORMALIZED_MOVEMENT:
 		direction = direction.normalized()

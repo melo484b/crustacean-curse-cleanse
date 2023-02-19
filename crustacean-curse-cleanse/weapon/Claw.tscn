@@ -49,14 +49,17 @@ autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ClawSFXmanager"]
 stream = ExtResource( 9 )
+volume_db = -3.0
 bus = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ClawSFXmanager"]
 stream = ExtResource( 10 )
+volume_db = -3.0
 bus = "SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="ClawSFXmanager"]
 stream = ExtResource( 9 )
+volume_db = -3.0
 pitch_scale = 1.1
 bus = "SFX"
 [connection signal="animation_finished" from="ClawAttackAnimationSprite" to="." method="_on_ClawAttackAnimationSprite_animation_finished"]
