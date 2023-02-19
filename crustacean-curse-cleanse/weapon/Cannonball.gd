@@ -56,6 +56,7 @@ func increase_detection_size() -> void:
 
 func explode() -> void:
 	$ExplosionSFXmanager.play()
+	$AnimationPlayer.play("explode")
 	exploding = true
 	particles.emitting = true
 	timer.start()

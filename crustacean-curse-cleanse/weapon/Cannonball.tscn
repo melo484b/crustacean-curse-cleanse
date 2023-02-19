@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://art/base-particle.png" type="Texture" id=1]
 [ext_resource path="res://weapon/Cannonball.gd" type="Script" id=2]
@@ -7,12 +7,33 @@
 [ext_resource path="res://sfx/projectile_explode_2.wav" type="AudioStream" id=5]
 [ext_resource path="res://manager/SFXmanager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sfx/projectile_explode_1.wav" type="AudioStream" id=7]
+[ext_resource path="res://art/vision_sprite1.png" type="Texture" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 8.0
+
+[sub_resource type="AnimatedTexture" id=3]
+fps = 1.0
+frame_0/texture = ExtResource( 11 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "explode"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("ExplosionLight:texture_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 4.0 ]
+}
 
 [node name="Cannonball" type="KinematicBody2D"]
 collision_layer = 0
@@ -54,5 +75,13 @@ texture = ExtResource( 1 )
 [node name="CleanupTimer" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
+
+[node name="ExplosionLight" type="Light2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = SubResource( 3 )
+mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/explode = SubResource( 4 )
 [connection signal="area_entered" from="HitDetectionArea" to="." method="_on_HitDetectionArea_area_entered"]
 [connection signal="timeout" from="CleanupTimer" to="." method="_on_CleanupTimer_timeout"]
