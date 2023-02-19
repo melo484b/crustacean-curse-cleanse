@@ -37,7 +37,7 @@ func _on_ready() -> void:
 	pass
 
 
-func move(delta: float) -> void:
+func move(_delta: float) -> void:
 	pass
 
 
