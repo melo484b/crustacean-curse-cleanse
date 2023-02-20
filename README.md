@@ -10,6 +10,10 @@ In a very unfortunate twist of events, your virtuous life as a convergent lifefo
  - Press CTRL + SHIFT + C on the boon menu to become a cheater
 ### Bugs
  - Laser occasionally fires in a random direction, instead of the mouse position. This seems to happen most when firing at the same spot twice.
+### TODO list
+ - Fix laser bug
+ - Improve game balance
+ - Reassess attack/weapon implementation
 ### Acknowledgements
 
 #### Music
