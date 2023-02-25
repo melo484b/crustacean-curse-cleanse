@@ -4,6 +4,11 @@ extends CanvasLayer
 signal start_the_game
 
 
+func _ready() -> void:
+	if OS.get_name() == "HTML5":
+		$MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Quit.visible = false
+
+
 func _on_StartGame_pressed() -> void:
 	$PressSFX.play()
 	emit_signal("start_the_game")
