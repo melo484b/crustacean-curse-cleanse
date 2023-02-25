@@ -12,6 +12,7 @@ In a very unfortunate twist of events, your virtuous life as a convergent lifefo
  - Laser occasionally fires in a random direction, instead of the mouse position. This seems to happen most when firing at the same spot twice.
  - The time curse does not reduce the time
 ### TODO list
+ - Fix bugs
  - Improve game balance
  - Reassess attack/weapon implementation
 ### Acknowledgements
