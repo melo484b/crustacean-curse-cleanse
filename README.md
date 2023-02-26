@@ -5,16 +5,15 @@ Entry for Godot Wild Jam #54 - [Try it!](https://melo484b.itch.io/crustacean-cur
 In a very unfortunate twist of events, your virtuous life as a convergent lifeform has come to an end. Claim riches from defiled decapods and buy your soul back from the Father of Carcinisation. Submit to curses to multiply your riches. Will it be enough?
 ### Controls
  - WASD to move
- - L click to attack with the Cannon or Laser
-   - The Claw attacks automatically, in the direction of your movement
+ - Weapons target the mouse position
  - Press CTRL + SHIFT + C on the boon menu to become a cheater
 ### Bugs
- - Laser occasionally fires in a random direction, instead of the mouse position. This seems to happen most when firing at the same spot twice.
+ - ~~Laser occasionally fires in a random direction, instead of the mouse position. This seems to happen most when firing at the same spot twice.~~
  - The time curse does not reduce the time
 ### TODO list
- - Fix bugs
+ - Fix tooltip legibility
  - Improve game balance
- - Reassess attack/weapon implementation
+ - ~~Reassess attack/weapon implementation~~
 ### Acknowledgements
 
 #### Music
