@@ -31,11 +31,6 @@ begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource( 2 )
 
-[node name="RayCast2D" type="RayCast2D" parent="Beam_1"]
-position = Vector2( -9, -10 )
-enabled = true
-collision_mask = 4
-
 [node name="LaserParticles" parent="Beam_1" instance=ExtResource( 4 )]
 visible = false
 scale = Vector2( 10, 10 )
@@ -62,11 +57,6 @@ begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource( 2 )
 
-[node name="RayCast2D" type="RayCast2D" parent="Beam_2"]
-position = Vector2( 9, -10 )
-enabled = true
-collision_mask = 4
-
 [node name="LaserParticles" parent="Beam_2" instance=ExtResource( 4 )]
 visible = false
 scale = Vector2( 10, 10 )
@@ -84,8 +74,9 @@ shape = SubResource( 2 )
 wait_time = 0.2
 
 [node name="AttackCooldown" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.55
 one_shot = true
+autostart = true
 
 [node name="LaserSFXmanager" parent="." instance=ExtResource( 6 )]
 
