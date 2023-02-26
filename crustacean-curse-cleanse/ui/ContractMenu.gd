@@ -8,7 +8,7 @@ const CURSED_VISION: float = 0.75
 const CURSED_CONNECTION: float = 0.1
 const CURSED_HEALTH_MODIFIER: float = 0.5
 const CURSED_LUCK: float = 0.5
-const CURSED_TIME_MODIFIER: float = 1.0
+const CURSED_TIME_MODIFIER: float = 0.5
 const INITIAL_WEALTH_MULTIPLIER: float = 1.0
 const BONUS_MULTIPLIER: float = 1.5
 

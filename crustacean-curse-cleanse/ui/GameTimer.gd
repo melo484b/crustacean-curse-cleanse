@@ -8,6 +8,8 @@ var game_time: int = 60
 
 
 func start() -> void:
+	game_time *= PlayerData.get_time_modifier()
+	update_text()
 	$Timer.start()
 
 
