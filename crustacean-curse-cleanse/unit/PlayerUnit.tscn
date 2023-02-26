@@ -62,13 +62,13 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="UnitWeaponNode" parent="." instance=ExtResource( 8 )]
 
 [node name="PlayerVision" parent="." instance=ExtResource( 9 )]
-scale = Vector2( 3, 3 )
+scale = Vector2( 6, 6 )
 
 [node name="HurtSFXmanager" parent="." instance=ExtResource( 11 )]
 

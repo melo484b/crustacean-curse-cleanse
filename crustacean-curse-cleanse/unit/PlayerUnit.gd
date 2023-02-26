@@ -7,11 +7,12 @@ var player_vision: Light2D
 
 func _init() -> void:
 # warning-ignore:narrowing_conversion
-	health *= PlayerData.get_health_modifier()
 	friction *= PlayerData.get_connection()
 
 
 func _on_ready() -> void:
+	if PlayerData.get_health_modifier() < 1:
+		get_hurt(health * PlayerData.get_health_modifier())
 	$UnitWeaponNode.equip_player_weapon()
 	player_vision = $PlayerVision
 	player_vision.scale *= PlayerData.get_vision()
