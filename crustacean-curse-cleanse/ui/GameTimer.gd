@@ -8,6 +8,7 @@ var game_time: int = 60
 
 
 func start() -> void:
+# warning-ignore:narrowing_conversion
 	game_time *= PlayerData.get_time_modifier()
 	update_text()
 	$Timer.start()
